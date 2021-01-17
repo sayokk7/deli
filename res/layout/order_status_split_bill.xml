@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView android:gravity="center_vertical" android:id="@id/split_bill_view" android:padding="@dimen/keyline_1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:foreground="?android:selectableItemBackground" android:text="@string/order_status_split_bill" android:drawablePadding="@dimen/keyline_1" app:drawableStartCompat="@drawable/ic_monzo_24dp" style="@style/UIKit.TextAppearance.Body.Medium.Action"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" />

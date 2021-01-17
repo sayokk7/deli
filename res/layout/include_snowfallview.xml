@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.deliveroo.orderapp.feature.orderstatus.snowfall.SnowfallView android:id="@id/snowfall_view" android:layout_width="fill_parent" android:layout_height="fill_parent" android:elevation="@dimen/elevation_fab" app:snowflakeAngleMax="8" app:snowflakeImage="@drawable/APKTOOL_DUMMY_1b1" app:snowflakeSizeMax="34.0dip" app:snowflakeSizeMin="10.0dip" app:snowflakeSpeedMax="10" app:snowflakeSpeedMin="6" app:snowflakesNum="30"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" />

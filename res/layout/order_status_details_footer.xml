@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.deliveroo.common.ui.UiKitDefaultRow android:layout_width="fill_parent" android:layout_height="wrap_content" app:left_icon="@drawable/uikit_ic_receipt" app:left_icon_type="action" app:left_option="icon" app:title="@string/show_order_details" app:title_type="action"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" />

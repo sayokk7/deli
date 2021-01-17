@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:background="@color/white" android:paddingTop="@dimen/padding_medium" android:paddingBottom="@dimen/padding_xsmall" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="@dimen/keyline_1" android:paddingEnd="@dimen/keyline_1"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView android:id="@id/icon" android:layout_width="@dimen/padding_large" android:layout_height="@dimen/padding_large" android:src="@drawable/uikit_ic_tag" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" app:tint="@color/orange_100" />
+    <TextView android:id="@id/title" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginStart="@dimen/keyline_1" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toEndOf="@id/icon" app:layout_constraintTop_toTopOf="parent" style="@style/UIKit.TextAppearance.Body.Medium" />
+    <TextView android:id="@id/message" android:layout_width="0.0dip" android:layout_height="wrap_content" app:layout_constraintEnd_toEndOf="@id/title" app:layout_constraintStart_toStartOf="@id/title" app:layout_constraintTop_toBottomOf="@id/title" style="@style/UIKit.TextAppearance.Body.Small.Secondary" />
+</androidx.constraintlayout.widget.ConstraintLayout>

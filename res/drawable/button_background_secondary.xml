@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_enabled="false">
+        <shape>
+            <solid android:color="?backgroundButtonSecondaryDisabled" />
+            <stroke android:width="1.0dip" android:color="?buttonOutlineColorDisabled" />
+            <corners android:radius="@dimen/border_radius_medium" />
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <solid android:color="?backgroundButtonSecondary" />
+            <stroke android:width="1.0dip" android:color="?buttonOutlineColor" />
+            <corners android:radius="@dimen/border_radius_medium" />
+        </shape>
+    </item>
+</selector>

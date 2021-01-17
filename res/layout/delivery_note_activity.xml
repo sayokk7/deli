@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.deliveroo.orderapp.core.ui.view.MaterialProgressView android:layout_gravity="center" android:id="@id/progress_view" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <androidx.appcompat.widget.Toolbar android:id="@id/toolbar" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Toolbar" />
+        <com.google.android.material.textfield.TextInputLayout android:id="@id/delivery_note_input_layout" android:layout_marginTop="@dimen/keyline_1" android:hint="@string/driver_instructions" android:layout_marginStart="@dimen/keyline_1" android:layout_marginEnd="@dimen/keyline_1" style="@style/RooTextInputLayout">
+            <com.google.android.material.textfield.TextInputEditText android:id="@id/delivery_note" android:maxLines="2" android:maxLength="@integer/delivery_note_max_length" android:inputType="textCapSentences|textNoSuggestions" style="@style/RooTextInput" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <TextView android:id="@id/delivery_note_help" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginStart="@dimen/keyline_1" android:layout_marginEnd="@dimen/keyline_1" style="@style/UIKit.TextAppearance.Body.Small.Secondary" />
+        <com.google.android.material.textfield.TextInputLayout android:id="@id/phone_number_input_layout" android:layout_marginTop="@dimen/keyline_1" android:hint="@string/phone_number" android:layout_marginStart="@dimen/keyline_1" android:layout_marginEnd="@dimen/keyline_1" style="@style/RooTextInputLayout">
+            <com.google.android.material.textfield.TextInputEditText android:id="@id/phone_number" android:inputType="phone" android:autofillHints="phone" android:importantForAutofill="yes" style="@style/RooTextInput" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.deliveroo.common.ui.UiKitButton android:layout_gravity="center_horizontal" android:id="@id/save_delivery_note" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/keyline_1" android:layout_marginStart="@dimen/keyline_1" android:layout_marginEnd="@dimen/keyline_1" app:text="@string/save_delivery_note" />
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:id="@id/ctv_roo_alert_dialog_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/dialog_padding_message_top" android:paddingStart="@dimen/dialog_padding" android:paddingEnd="@dimen/dialog_padding" style="@style/UIKit.TextAppearance.Heading.XSmall" />
+    <TextView android:id="@id/ctv_roo_alert_dialog_message" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="8" android:paddingStart="@dimen/dialog_padding" android:paddingEnd="@dimen/dialog_padding" style="@style/UIKit.TextAppearance.Body.Medium.Secondary" />
+    <TextView android:id="@id/ctv_roo_alert_dialog_action_message" android:visibility="gone" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dialog_padding" android:maxLines="8" android:paddingStart="@dimen/dialog_padding" android:paddingEnd="@dimen/dialog_padding" style="@style/UIKit.TextAppearance.Body.Medium.Bold" />
+    <androidx.legacy.widget.Space android:layout_width="fill_parent" android:layout_height="@dimen/dialog_padding" />
+</merge>

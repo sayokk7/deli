@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:layout_gravity="center_vertical" android:id="@id/avatar_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentLeft="true" layout="@layout/row_agent_avatar_view" />
+    <include android:gravity="start|center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/chat_bubble_padding" android:layout_toRightOf="@id/avatar_icon" android:layout_centerInParent="true" layout="@layout/row_typing_indicator_view" />
+</RelativeLayout>

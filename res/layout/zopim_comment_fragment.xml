@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.google.android.material.textfield.TextInputLayout android:id="@id/comment_editor" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/comments_form_vertical_margin" android:layout_marginBottom="@dimen/comments_form_vertical_margin" android:layout_alignParentTop="true">
+        <EditText android:gravity="start|center|top" android:paddingLeft="@dimen/chat_log_padding" android:paddingTop="@dimen/chat_log_padding" android:paddingRight="@dimen/chat_log_padding" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="@string/rate_this_chat_comment_label" android:inputType="textMultiLine" />
+    </com.google.android.material.textfield.TextInputLayout>
+</RelativeLayout>

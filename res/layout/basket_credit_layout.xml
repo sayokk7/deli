@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:orientation="horizontal" android:id="@id/account_credit_panel" android:background="?android:selectableItemBackground" android:paddingTop="@dimen/padding_small" android:paddingBottom="@dimen/padding_small" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="@dimen/keyline_1" android:paddingEnd="@dimen/keyline_1"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:id="@id/title" android:layout_width="0.0dip" android:layout_height="wrap_content" app:layout_constraintEnd_toStartOf="@id/amount" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" style="@style/UIKit.TextAppearance.Body.Medium" />
+    <TextView android:id="@id/descriptions" android:layout_width="wrap_content" android:layout_height="wrap_content" app:layout_constraintStart_toStartOf="@id/title" app:layout_constraintTop_toBottomOf="@id/title" style="@style/UIKit.TextAppearance.Body.Small.Secondary" />
+    <TextView android:gravity="end" android:id="@id/amount" android:layout_width="0.0dip" android:layout_height="wrap_content" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent" style="@style/UIKit.TextAppearance.Body.Medium.Action" />
+</androidx.constraintlayout.widget.ConstraintLayout>

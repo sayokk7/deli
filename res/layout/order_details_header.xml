@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:paddingTop="@dimen/padding_large" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="@dimen/keyline_1" android:paddingEnd="@dimen/keyline_1"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:gravity="center_horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/order_details_order_number" style="@style/OrderDetailsHeader" />
+    <TextView android:gravity="center_horizontal" android:id="@id/order_number" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/UIKit.TextAppearance.Heading.Small" />
+    <TextView android:gravity="center_horizontal" android:id="@id/restaurant_label" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/padding_medium" android:text="@string/order_details_delivered_from" style="@style/OrderDetailsHeader" />
+    <TextView android:gravity="center_horizontal" android:layout_gravity="center_horizontal" android:id="@id/restaurant" android:background="?selectableItemBackgroundBorderless" android:paddingLeft="@dimen/padding_medium" android:paddingRight="@dimen/padding_medium" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingHorizontal="@dimen/padding_medium" style="@style/UIKit.TextAppearance.Body.Medium.Bold.Action" />
+    <TextView android:gravity="center_horizontal" android:id="@id/address_label" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/padding_medium" android:text="@string/order_details_delivered_to" style="@style/OrderDetailsHeader" />
+    <TextView android:gravity="center_horizontal" android:id="@id/address" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/UIKit.TextAppearance.Body.Medium" />
+    <TextView android:gravity="center_horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/padding_medium" android:text="@string/order_details_status" style="@style/OrderDetailsHeader" />
+    <TextView android:gravity="center_horizontal" android:id="@id/status" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/UIKit.TextAppearance.Body.Medium" />
+    <include layout="@layout/include_order_details_divider" />
+    <TextView android:gravity="center_horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/padding_medium" android:text="@string/order_details_items_and_payment" style="@style/OrderDetailsHeader" />
+</LinearLayout>

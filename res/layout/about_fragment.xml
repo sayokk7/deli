@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/main_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.appcompat.widget.Toolbar android:id="@id/toolbar" android:layout_width="fill_parent" android:layout_height="?android:actionBarSize" style="@style/Toolbar" />
+    <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:paddingTop="@dimen/padding_large" android:paddingBottom="@dimen/padding_medium" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <View android:background="@color/row_divider" android:layout_width="fill_parent" android:layout_height="@dimen/menu_divider" />
+            <com.deliveroo.common.ui.UiKitDefaultRow android:id="@id/contact_us" android:background="@color/white" android:paddingTop="@dimen/padding_xsmall" android:layout_width="fill_parent" android:layout_height="wrap_content" app:left_icon="@drawable/uikit_ic_envelope" app:left_option="icon" app:title="@string/about_contact_us" />
+            <com.deliveroo.common.ui.UiKitDefaultRow android:id="@id/send_feedback" android:layout_width="fill_parent" android:layout_height="wrap_content" app:left_icon="@drawable/uikit_ic_bubble_text" app:left_option="icon" app:title="@string/about_send_us" />
+            <com.deliveroo.common.ui.UiKitDefaultRow android:id="@id/rate_on_playstore" android:background="@color/white" android:paddingBottom="@dimen/padding_xsmall" android:layout_width="fill_parent" android:layout_height="wrap_content" app:left_icon="@drawable/ic_play_store_anchovy_24dp" app:left_option="icon" app:title="@string/about_rate_us" />
+            <View android:id="@id/divider" android:background="@color/row_divider" android:layout_width="fill_parent" android:layout_height="@dimen/menu_divider" />
+            <TextView android:gravity="center_vertical" android:id="@id/version" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/padding_large" android:text="@string/about_version" android:layout_marginStart="@dimen/keyline_1" style="@style/UIKit.TextAppearance.Body.Small.Bold" />
+            <TextView android:gravity="center_vertical" android:id="@id/copyright" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/padding_medium" android:text="@string/about_copyright" android:layout_marginStart="@dimen/keyline_1" style="@style/UIKit.TextAppearance.Body.Small.Secondary" />
+            <TextView android:id="@id/terms_conditions" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/padding_small" android:text="@string/about_terms" android:textAllCaps="false" style="@style/AboutUsLinks" />
+            <TextView android:id="@id/privacy_policy" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/padding_xsmall" android:text="@string/about_privacy" android:textAllCaps="false" style="@style/AboutUsLinks" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

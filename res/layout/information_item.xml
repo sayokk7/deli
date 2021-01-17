@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.deliveroo.common.ui.UiKitDefaultRow android:id="@id/row" android:paddingBottom="@dimen/padding_xsmall" android:layout_width="fill_parent" android:layout_height="wrap_content" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" app:left_option="illustration_badge" app:subtitle_type="secondary_large" app:title_type="large"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" />

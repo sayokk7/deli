@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="@dimen/keyline_1" android:paddingEnd="@dimen/keyline_1"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:gravity="center" android:id="@id/description" android:layout_width="0.0dip" android:layout_height="wrap_content" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" style="@style/UIKit.TextAppearance.Body.Medium" />
+    <TextView android:gravity="center" android:id="@id/subtitle" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginTop="@dimen/padding_small" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/description" style="@style/UIKit.TextAppearance.Heading.Medium" />
+    <com.deliveroo.common.ui.UiKitButton android:id="@id/button" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginTop="@dimen/padding_large" android:layout_marginBottom="@dimen/padding_large" android:minHeight="@dimen/action_size" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/subtitle" />
+</androidx.constraintlayout.widget.ConstraintLayout>

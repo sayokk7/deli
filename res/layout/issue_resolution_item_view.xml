@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_margin="@dimen/space_for_card_elevation" style="@style/StandardCardView"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView android:layout_gravity="center" android:paddingTop="@dimen/padding_large" android:paddingBottom="@dimen/padding_large" android:layout_width="fill_parent" android:layout_height="wrap_content" android:fadeScrollbars="false">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="@dimen/keyline_1" android:paddingEnd="@dimen/keyline_1">
+            <LinearLayout android:gravity="center_horizontal" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:id="@id/amount" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" style="@style/UIKit.TextAppearance.Body.Medium" />
+                <TextView android:id="@id/amount_lower" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" android:paddingStart="@dimen/padding_small" style="@style/UIKit.TextAppearance.Body.XSmall.Secondary" />
+            </LinearLayout>
+            <TextView android:gravity="center" android:id="@id/title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="2" style="@style/UIKit.TextAppearance.Heading.XSmall" />
+            <TextView android:gravity="center" android:id="@id/subtitle" android:paddingTop="@dimen/padding_xxsmall" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/UIKit.TextAppearance.Body.Medium.Secondary" />
+            <TextView android:gravity="center" android:id="@id/footer" android:paddingTop="@dimen/padding_xsmall" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/UIKit.TextAppearance.Body.Small.Bold" />
+        </LinearLayout>
+    </ScrollView>
+</androidx.cardview.widget.CardView>

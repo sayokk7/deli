@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.deliveroo.orderapp.shared.HeaderCardView android:id="@id/header_card_view" android:layout_width="fill_parent" android:layout_height="wrap_content" android:outlineProvider="none" app:cardCornerRadius="0.0dip" app:cardElevation="0.0dip" app:cardMaxElevation="0.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" />

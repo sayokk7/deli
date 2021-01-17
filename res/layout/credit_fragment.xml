@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.recyclerview.widget.RecyclerView android:id="@id/recycler_view" android:paddingBottom="@dimen/padding_small" android:scrollbars="vertical" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="@dimen/fab_size_half" android:elevation="@dimen/bottom_sheet_elevation" app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" style="?bottomSheetStyle" />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton android:layout_gravity="center_horizontal" android:id="@id/header_icon" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/uikit_ic_ticket" app:elevation="@dimen/bottom_sheet_icon_elevation" style="@style/Fab.White" />
+</FrameLayout>

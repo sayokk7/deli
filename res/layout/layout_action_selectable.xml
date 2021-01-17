@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.deliveroo.common.ui.UiKitDefaultRow android:layout_width="fill_parent" android:layout_height="wrap_content" app:form_element_type="radio_button" app:left_option="icon"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" />

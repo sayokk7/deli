@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/root_container" android:background="@color/anchovy_5" android:paddingTop="@dimen/padding_xlarge" android:layout_width="fill_parent" android:layout_height="wrap_content" android:accessibilityHeading="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:paddingBottom="@dimen/padding_small" android:duplicateParentState="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="@dimen/menu_item_padding" android:paddingEnd="@dimen/menu_item_padding">
+        <TextView android:id="@id/category_name" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/UIKit.TextAppearance.Heading.XSmall" />
+        <TextView android:id="@id/category_description" android:visibility="gone" android:duplicateParentState="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/padding_small" style="@style/UIKit.TextAppearance.Body.Small.Secondary" />
+    </LinearLayout>
+    <View android:id="@id/sticky_divider" android:background="@color/row_divider" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="@dimen/menu_divider" />
+</LinearLayout>

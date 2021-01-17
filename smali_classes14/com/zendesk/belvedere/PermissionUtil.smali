@@ -1,0 +1,92 @@
+.class public Lcom/zendesk/belvedere/PermissionUtil;
+.super Ljava/lang/Object;
+.source "PermissionUtil.java"
+
+
+# direct methods
+.method public static hasPermissionInManifest(Landroid/content/Context;Ljava/lang/String;)Z
+    .locals 4
+
+    .line 34
+    invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    .line 36
+    :try_start_0
+    invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object p0
+
+    const/16 v2, 0x1000
+
+    .line 37
+    invoke-virtual {p0, v0, v2}, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
+
+    move-result-object p0
+
+    .line 38
+    iget-object p0, p0, Landroid/content/pm/PackageInfo;->requestedPermissions:[Ljava/lang/String;
+
+    if-eqz p0, :cond_1
+
+    .line 39
+    array-length v0, p0
+
+    if-lez v0, :cond_1
+
+    .line 40
+    array-length v0, p0
+
+    move v2, v1
+
+    :goto_0
+    if-ge v2, v0, :cond_1
+
+    aget-object v3, p0, v2
+
+    .line 41
+    invoke-virtual {v3, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    if-eqz v3, :cond_0
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_0
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    :catch_0
+    :cond_1
+    return v1
+.end method
+
+.method public static isPermissionGranted(Landroid/content/Context;Ljava/lang/String;)Z
+    .locals 0
+
+    .line 22
+    invoke-static {p0, p1}, Landroidx/core/content/ContextCompat;->checkSelfPermission(Landroid/content/Context;Ljava/lang/String;)I
+
+    move-result p0
+
+    if-nez p0, :cond_0
+
+    const/4 p0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    :goto_0
+    return p0
+.end method

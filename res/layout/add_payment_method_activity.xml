@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.appcompat.widget.Toolbar android:id="@id/toolbar" android:layout_width="fill_parent" android:layout_height="?android:actionBarSize" style="@style/Toolbar" />
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <com.deliveroo.orderapp.core.ui.view.MaterialProgressView android:layout_gravity="center" android:id="@id/progress_view" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <ScrollView android:id="@id/fields_container" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:fillViewport="true">
+            <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="@dimen/keyline_1" android:paddingEnd="@dimen/keyline_1">
+                <com.deliveroo.common.ui.UiKitButton android:id="@id/add_card_button" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/screen_top_margin_large" android:layout_marginBottom="@dimen/padding_large" app:text="@string/button_credit_card_add" />
+                <com.deliveroo.orderapp.core.ui.view.TextSeparatorView android:layout_width="@dimen/separator_width" android:layout_height="wrap_content" android:text="@string/or" android:textAllCaps="true" />
+                <ImageButton android:id="@id/add_paypal_button" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/padding_large" android:src="@drawable/APKTOOL_DUMMY_18f" style="@style/Special.Button.Secondary" />
+            </LinearLayout>
+        </ScrollView>
+    </FrameLayout>
+</LinearLayout>

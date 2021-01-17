@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple android:color="@color/black_40"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_enabled="true" android:state_activated="true">
+        <shape android:shape="rectangle">
+            <corners android:radius="4.0dip" />
+            <solid android:color="@color/anchovy_20" />
+        </shape>
+    </item>
+    <item android:state_enabled="true" android:state_selected="true">
+        <shape android:shape="rectangle">
+            <corners android:radius="4.0dip" />
+            <solid android:color="@color/anchovy_20" />
+        </shape>
+    </item>
+    <item android:state_enabled="true" android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <corners android:radius="4.0dip" />
+            <solid android:color="@color/anchovy_20" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="4.0dip" />
+            <solid android:color="@color/anchovy_10_special" />
+        </shape>
+    </item>
+</ripple>

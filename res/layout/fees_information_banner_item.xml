@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView android:id="@id/description" android:paddingTop="@dimen/padding_medium" android:paddingBottom="@dimen/padding_medium" android:layout_width="fill_parent" android:layout_height="wrap_content" android:drawablePadding="@dimen/keyline_1" android:paddingStart="@dimen/keyline_1" android:paddingEnd="@dimen/keyline_2_minus_16dp" app:drawableTint="@color/anchovy_60" style="@style/UIKit.TextAppearance.Body.Small.Secondary"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" />

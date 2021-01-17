@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:paddingTop="@dimen/padding_medium" android:paddingBottom="@dimen/padding_medium" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="@dimen/keyline_1" android:paddingEnd="@dimen/keyline_1"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.deliveroo.orderapp.feature.orderstatus.views.OrderStatusPlaceholderTwoLinesView android:id="@id/top_two_lines" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <View android:background="@color/row_divider" android:layout_width="fill_parent" android:layout_height="@dimen/menu_divider" android:layout_marginTop="@dimen/padding_medium" />
+    <com.deliveroo.orderapp.feature.orderstatus.views.OrderStatusPlaceholderOneLineView android:id="@id/top_one_line" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/padding_medium" />
+</LinearLayout>

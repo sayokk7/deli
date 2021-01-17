@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:focusable="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.appcompat.widget.Toolbar android:id="@id/toolbar" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Toolbar" />
+    <FrameLayout android:background="@color/main_background" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <ScrollView android:id="@id/content" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:orientation="vertical" android:id="@id/fragments_container" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <com.deliveroo.common.ui.UiKitServiceBanner android:id="@id/checkout_opt_in" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/keyline_1" android:layout_marginStart="@dimen/keyline_1" android:layout_marginEnd="@dimen/keyline_1" app:button="@string/checkout_optin_new_checkout_cta" app:message="@string/checkout_optin_new_checkout_message" app:title="@string/checkout_optin_new_checkout_title" />
+                <com.deliveroo.orderapp.fulfillmenttime.ui.InlineFulfillmentTimeView android:id="@id/fulfillment_time" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/padding_large" />
+                <include android:id="@id/marketing_opt_in" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/keyline_1" layout="@layout/include_marketing_opt_in" />
+                <FrameLayout android:id="@id/address_card" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                <include android:id="@id/table_number_card" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/padding_large" layout="@layout/include_table_number" />
+                <FrameLayout android:id="@id/payment_card" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/keyline_1" />
+            </LinearLayout>
+        </ScrollView>
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/error_state" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <com.deliveroo.common.ui.UiKitButton android:id="@id/checkout_try_again" android:layout_width="wrap_content" android:layout_height="wrap_content" app:text="@string/checkout_try_again" app:type="primary" />
+        </LinearLayout>
+        <include android:id="@id/progress" layout="@layout/include_progress_panel" />
+    </FrameLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout android:background="@android:color/white" android:paddingBottom="@dimen/keyline_1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:elevation="@dimen/checkout_bottom_view_elevation">
+        <FrameLayout android:id="@id/basket_summary" android:layout_width="0.0dip" android:layout_height="wrap_content" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+        <FrameLayout android:id="@id/bottom_panel" android:layout_width="0.0dip" android:layout_height="wrap_content" android:paddingStart="@dimen/keyline_1" android:paddingEnd="@dimen/keyline_1" app:layout_constraintBottom_toTopOf="@id/alcohol_notice" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/basket_summary">
+            <com.deliveroo.common.ui.UiKitButton android:enabled="false" android:layout_gravity="center" android:id="@id/checkout_button" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            <include android:layout_gravity="center" android:id="@id/google_pay_checkout_button" android:layout_width="fill_parent" android:layout_height="48.0sp" layout="@layout/buy_with_googlepay_button" />
+            <ProgressBar android:layout_gravity="center" android:id="@id/checkout_progress" android:layout_width="@dimen/progress_view_small" android:layout_height="@dimen/progress_view_small" android:importantForAccessibility="no" style="@style/Widget.AppCompat.ProgressBar" />
+        </FrameLayout>
+        <TextView android:id="@id/alcohol_notice" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginTop="@dimen/keyline_1" android:layout_marginStart="@dimen/keyline_1" android:layout_marginEnd="@dimen/keyline_1" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/bottom_panel" style="@style/UIKit.TextAppearance.Body.Small.Secondary" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

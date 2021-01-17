@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.deliveroo.common.ui.UiKitPromoBanner android:id="@id/reward_banner" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/padding_large" android:layout_marginBottom="@dimen/padding_large" android:layout_marginStart="@dimen/padding_medium" android:layout_marginEnd="@dimen/padding_medium" app:banner_theme="promo_aubergine_light" app:banner_type="card"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" />

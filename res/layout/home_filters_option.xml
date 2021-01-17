@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:paddingTop="@dimen/padding_medium" android:paddingBottom="@dimen/padding_medium" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:foreground="?android:selectableItemBackground" android:paddingStart="@dimen/keyline_1" android:paddingEnd="@dimen/keyline_1"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckedTextView android:textColor="@color/body_text_selector" android:gravity="center" android:id="@id/checkbox" android:duplicateParentState="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:checkMark="?android:listChoiceIndicatorMultiple" style="@style/UIKit.TextAppearance.Body.Medium" />
+    <CheckedTextView android:textColor="@color/body_text_selector" android:gravity="center" android:id="@id/radio" android:visibility="gone" android:duplicateParentState="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:checkMark="?android:listChoiceIndicatorSingle" style="@style/UIKit.TextAppearance.Body.Medium" />
+</FrameLayout>

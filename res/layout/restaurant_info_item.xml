@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:orientation="vertical" android:paddingTop="@dimen/padding_medium" android:paddingBottom="@dimen/padding_medium" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="@dimen/keyline_1" android:paddingEnd="@dimen/keyline_1"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:id="@id/text" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/UIKit.TextAppearance.Body.Small.Secondary" />
+</FrameLayout>

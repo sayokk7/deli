@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout android:id="@id/badge_overlay_container" android:padding="@dimen/padding_small" android:layout_width="0.0dip" android:layout_height="0.0dip" app:layout_constraintBottom_toBottomOf="@id/card_image" app:layout_constraintEnd_toEndOf="@id/card_image" app:layout_constraintStart_toStartOf="@id/card_image" app:layout_constraintTop_toTopOf="@id/card_image">
+        <TextView android:ellipsize="end" android:gravity="center_vertical" android:id="@id/badge_overlay" android:background="@drawable/background_badge_overlay" android:paddingTop="@dimen/padding_xxsmall" android:paddingBottom="@dimen/badge_bottom_padding" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" android:paddingStart="@dimen/padding_xsmall" android:paddingEnd="@dimen/padding_xsmall" />
+        <include android:layout_gravity="start|center|top" android:id="@id/sticker" android:layout_width="@dimen/sticker_size" android:layout_height="@dimen/sticker_size" layout="@layout/sticker" />
+    </FrameLayout>
+    <TextView android:gravity="center" android:id="@id/text_overlay" android:background="@drawable/background_card_overlay" android:padding="@dimen/keyline_1" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="0.0dip" android:transitionName="@string/tn_card_text_overlay" app:layout_constraintBottom_toBottomOf="@id/card_image" app:layout_constraintEnd_toEndOf="@id/card_image" app:layout_constraintStart_toStartOf="@id/card_image" app:layout_constraintTop_toTopOf="@id/card_image" style="@style/UIKit.TextAppearance.Body.Small.Bold.Inverted" />
+</merge>

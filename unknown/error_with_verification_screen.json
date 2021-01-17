@@ -1,0 +1,10 @@
+{
+  "type": "STRIPE_PAYMENT_AUTHENTICATION_REQUIRED",
+  "developer_message": "Phone number not verified",
+  "title": "Verification Required",
+  "message": "You need to verify your phone number.",
+  "screen": {
+    "api_key": "key",
+    "client_secret": "secret"
+  }
+}

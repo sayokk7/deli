@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:orientation="vertical" android:id="@id/root_view" android:background="@color/main_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.appcompat.widget.Toolbar android:id="@id/toolbar" android:layout_width="0.0dip" android:layout_height="?android:actionBarSize" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" style="@style/Toolbar" />
+    <androidx.constraintlayout.widget.Group android:id="@id/content_panel" android:layout_width="wrap_content" android:layout_height="wrap_content" app:constraint_referenced_ids="resolutions,submit_panel" />
+    <ScrollView android:id="@id/resolutions" android:layout_width="fill_parent" android:layout_height="0.0dip" app:layout_constraintBottom_toTopOf="@id/submit_panel" app:layout_constraintTop_toBottomOf="@id/toolbar">
+        <LinearLayout android:orientation="vertical" android:paddingTop="@dimen/padding_large" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <ImageView android:layout_gravity="center_horizontal" android:id="@id/empty_state_icon" android:layout_width="70.0dip" android:layout_height="70.0dip" android:layout_marginBottom="@dimen/keyline_1" app:srcCompat="@drawable/ic_heart" style="@style/HelpResolutionsHeart" />
+            <TextView android:gravity="center" android:id="@id/header" android:paddingBottom="@dimen/keyline_1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="@dimen/padding_xlarge" android:paddingEnd="@dimen/padding_xlarge" style="@style/UIKit.TextAppearance.Heading.XSmall" />
+            <androidx.viewpager.widget.ViewPager android:id="@id/viewpager" android:clipChildren="false" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="@dimen/item_resolution_pager_height" android:paddingStart="@dimen/pager_preview_width" android:paddingEnd="@dimen/pager_preview_width" />
+            <com.google.android.material.tabs.TabLayout android:id="@id/viewpager_indicator" android:layout_width="fill_parent" android:layout_height="@dimen/pager_indicator_height" android:layout_marginTop="@dimen/keyline_1_half" app:tabBackground="@drawable/pager_indicator_dots_selector" app:tabGravity="center" app:tabIndicatorHeight="0.0dip" />
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout android:layout_gravity="bottom" android:orientation="vertical" android:id="@id/submit_panel" android:background="@android:color/white" android:paddingTop="@dimen/padding_small" android:layout_width="fill_parent" android:layout_height="wrap_content" android:elevation="@dimen/elevation_default" app:layout_constraintBottom_toBottomOf="parent">
+        <TextView android:gravity="center" android:id="@id/footnote" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="@dimen/padding_xlarge" android:paddingEnd="@dimen/padding_xlarge" style="@style/UIKit.TextAppearance.Body.XSmall.Secondary" />
+        <com.deliveroo.common.ui.UiKitButton android:id="@id/submit_button" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/padding_small" android:layout_marginBottom="@dimen/keyline_1" android:layout_marginStart="@dimen/keyline_1" android:layout_marginEnd="@dimen/keyline_1" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

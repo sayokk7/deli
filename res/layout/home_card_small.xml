@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="@dimen/restaurant_card_small_width" android:layout_height="wrap_content" android:layout_marginTop="@dimen/padding_xsmall" android:layout_marginBottom="@dimen/keyline_1_half" android:foreground="?android:selectableItemBackground" android:layout_marginStart="@dimen/padding_xsmall" android:layout_marginEnd="@dimen/padding_xsmall"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView android:id="@id/card_image" android:background="@drawable/placeholder_image_background" android:layout_width="0.0dip" android:layout_height="0.0dip" android:scaleType="fitXY" android:importantForAccessibility="no" android:transitionName="@string/tn_restaurant_image" app:layout_constraintDimensionRatio="H,4:3" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+    <include layout="@layout/include_card_overlay" />
+    <TextView android:id="@id/meta_text" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginTop="@dimen/padding_medium" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/card_image" />
+</androidx.constraintlayout.widget.ConstraintLayout>

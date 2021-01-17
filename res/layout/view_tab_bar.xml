@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="48.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.deliveroo.common.ui.tabbar.TabSelectionIndicator android:id="@id/tab_indicator" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <com.deliveroo.common.ui.tabbar.ObservableTabLayout android:id="@id/tab_layout" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="fill_parent" app:tabBackground="@null" app:tabIndicatorHeight="0.0dip" app:tabMode="scrollable" app:tabPaddingBottom="2.0dip" app:tabPaddingEnd="20.0dip" app:tabPaddingStart="20.0dip" app:tabRippleColor="@android:color/transparent" app:tabTextAppearance="@style/UIKit.TextAppearance.Body.Small" />
+</FrameLayout>

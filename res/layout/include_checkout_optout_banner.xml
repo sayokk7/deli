@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.deliveroo.common.ui.UiKitServiceBanner android:id="@id/banner" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/keyline_1" android:layout_marginStart="@dimen/keyline_1" android:layout_marginEnd="@dimen/keyline_1" app:button="@string/checkout_optout_new_checkout_cta" app:message="@string/checkout_optout_new_checkout_message" app:title="@string/checkout_optout_new_checkout_title"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" />

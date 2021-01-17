@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.deliveroo.orderapp.core.ui.view.FlowLayout android:id="@id/offer_labels" android:background="@color/white" android:paddingTop="@dimen/padding_xsmall" android:paddingBottom="@dimen/padding_xsmall" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="@dimen/keyline_1" android:paddingEnd="@dimen/keyline_1"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

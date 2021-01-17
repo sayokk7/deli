@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:layout_width="@dimen/restaurant_card_wide_width" android:layout_height="wrap_content" android:layout_marginTop="@dimen/padding_xsmall" android:layout_marginStart="@dimen/padding_xsmall" android:layout_marginEnd="@dimen/padding_xsmall" app:cardCornerRadius="4.0dip" app:cardElevation="@dimen/card_elevation"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_margin="@dimen/keyline_1">
+        <FrameLayout android:id="@id/placeholder_image_container" android:background="@drawable/placeholder_image_background" android:layout_width="80.0dip" android:layout_height="80.0dip" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent">
+            <ImageView android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/placeholder_restaurant" android:scaleType="centerCrop" android:importantForAccessibility="no" />
+            <com.deliveroo.orderapp.core.ui.view.placeholder.PlaceholderView android:id="@id/placeholder_image" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        </FrameLayout>
+        <com.deliveroo.orderapp.core.ui.view.placeholder.PlaceholderView android:id="@id/placeholder" android:layout_width="0.0dip" android:layout_height="0.0dip" android:layout_marginStart="@dimen/keyline_1_half" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toEndOf="@id/placeholder_image_container" app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

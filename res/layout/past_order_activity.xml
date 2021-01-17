@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.appcompat.widget.Toolbar android:id="@id/toolbar" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Toolbar" />
+    <androidx.recyclerview.widget.RecyclerView android:id="@id/recycler_view" android:paddingTop="@dimen/padding_small" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/ll_items_footer" android:layout_below="@id/toolbar" />
+    <FrameLayout android:layout_gravity="bottom" android:orientation="horizontal" android:id="@id/ll_items_footer" android:background="@android:color/white" android:padding="@dimen/menu_item_padding" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" android:elevation="@dimen/elevation_default">
+        <com.deliveroo.common.ui.UiKitButton android:layout_gravity="center" android:id="@id/btn_add_items" android:layout_width="fill_parent" android:layout_height="wrap_content" app:text="@string/past_order_add_items" />
+    </FrameLayout>
+</RelativeLayout>

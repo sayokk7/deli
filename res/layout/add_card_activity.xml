@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.appcompat.widget.Toolbar android:id="@id/toolbar" android:layout_width="fill_parent" android:layout_height="?android:actionBarSize" style="@style/Toolbar" />
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <com.deliveroo.orderapp.core.ui.view.MaterialProgressView android:layout_gravity="center" android:id="@id/progress_view" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <ScrollView android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:orientation="vertical" android:padding="@dimen/keyline_1" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <FrameLayout android:gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <com.google.android.material.textfield.TextInputLayout android:id="@id/credit_card_number_input_layout" android:hint="@string/hint_credit_card_number" style="@style/RooTextInputLayout">
+                        <com.google.android.material.textfield.TextInputEditText android:gravity="start" android:id="@id/credit_card_number" android:digits="\ 0123456789" android:drawablePadding="@dimen/padding_small" android:inputType="number" android:imeOptions="actionNext" android:nextFocusForward="@id/credit_card_expiry" android:textDirection="ltr" android:autofillHints="creditCardNumber" android:importantForAutofill="yes" app:drawableEndCompat="@drawable/APKTOOL_DUMMY_93" style="@style/RooTextInput" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <ImageButton android:layout_gravity="end|center" android:id="@id/scan_card_button" android:background="?android:selectableItemBackground" android:padding="8.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" app:srcCompat="@drawable/uikit_ic_camera" app:tint="?backgroundButtonPrimary" />
+                </FrameLayout>
+                <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <com.google.android.material.textfield.TextInputLayout android:id="@id/credit_card_expiry_input_layout" android:hint="@string/hint_credit_card_expiry" android:layout_marginEnd="@dimen/padding_xxsmall" style="@style/AddCreditCardHorizontalTextInputLayout">
+                        <com.google.android.material.textfield.TextInputEditText android:gravity="start" android:id="@id/credit_card_expiry" android:nextFocusLeft="@id/credit_card_number" android:maxLength="@integer/credit_card_expiry_max_length" android:digits="0123456789/" android:inputType="number" android:imeOptions="actionNext" android:nextFocusForward="@id/credit_card_cvv" android:textDirection="ltr" android:autofillHints="creditCardExpirationDate" android:importantForAutofill="yes" style="@style/RooTextInput" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout android:id="@id/credit_card_cvv_input_layout" android:hint="@string/hint_credit_card_cvv" android:layout_marginStart="@dimen/padding_xxsmall" style="@style/AddCreditCardHorizontalTextInputLayout">
+                        <com.google.android.material.textfield.TextInputEditText android:id="@id/credit_card_cvv" android:nextFocusLeft="@id/credit_card_expiry" android:maxLength="@integer/credit_card_cvv_max_length" android:digits="\ 0123456789" android:inputType="number" android:imeOptions="actionDone" android:autofillHints="creditCardSecurityCode" android:importantForAutofill="yes" style="@style/RooTextInput" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+                <com.deliveroo.common.ui.UiKitButton android:layout_gravity="center" android:id="@id/save_card_button" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/keyline_1" android:layout_marginBottom="@dimen/keyline_1" app:text="@string/button_credit_card_save" />
+            </LinearLayout>
+        </ScrollView>
+    </FrameLayout>
+</LinearLayout>

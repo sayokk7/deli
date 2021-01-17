@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<transitionSet android:interpolator="@android:interpolator/linear_out_slow_in" android:transitionOrdering="together"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <fade android:duration="@integer/transition_duration_menu">
+        <targets>
+            <target android:excludeId="@android:id/navigationBarBackground" />
+            <target android:excludeId="@android:id/statusBarBackground" />
+            <target android:excludeId="@id/background" />
+        </targets>
+    </fade>
+</transitionSet>

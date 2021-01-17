@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="oval"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <solid android:color="@color/attachment_icon_ppt" />
+            <size android:height="@dimen/attachment_icon_diameter" android:width="@dimen/attachment_icon_diameter" />
+        </shape>
+    </item>
+    <item>
+        <bitmap android:gravity="center" android:src="@drawable/APKTOOL_DUMMY_113" />
+    </item>
+</layer-list>

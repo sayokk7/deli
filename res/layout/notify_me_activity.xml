@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <androidx.appcompat.widget.Toolbar android:id="@id/toolbar" android:layout_width="fill_parent" android:layout_height="?android:actionBarSize" style="@style/Toolbar" />
+        <LinearLayout android:orientation="vertical" android:padding="@dimen/keyline_1" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <com.google.android.material.textfield.TextInputLayout android:id="@id/email_container" android:hint="@string/notify_me_email_placeholder" style="@style/RooTextInputLayout">
+                <com.google.android.material.textfield.TextInputEditText android:id="@id/email" android:inputType="textEmailAddress" android:autofillHints="emailAddress" android:importantForAutofill="yes" style="@style/RooTextInput" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.deliveroo.common.ui.UiKitButton android:layout_gravity="center_horizontal" android:id="@id/submit" android:layout_width="fill_parent" android:layout_height="wrap_content" app:text="@string/submit" />
+        </LinearLayout>
+    </LinearLayout>
+    <com.deliveroo.orderapp.core.ui.view.MaterialProgressView android:layout_gravity="center" android:id="@id/progress_view" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+</FrameLayout>

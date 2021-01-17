@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:fillViewport="true">
+        <LinearLayout android:orientation="vertical" android:background="@color/main_background" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <ImageView android:layout_gravity="center_horizontal" android:id="@id/header_image" android:paddingTop="@dimen/padding_large" android:layout_width="fill_parent" android:layout_height="@dimen/subscription_details_backdrop_height" android:scaleType="center" app:srcCompat="@drawable/ic_deliveroo_plus_logo" />
+            <TextView android:id="@id/title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/padding_xlarge" android:layout_marginBottom="@dimen/padding_small" android:text="@string/subscription_title" android:layout_marginStart="@dimen/keyline_1" android:layout_marginEnd="@dimen/keyline_1" style="@style/UIKit.TextAppearance.Heading.XSmall" />
+            <View android:id="@id/subscription_plan_top_divider" android:background="@color/row_divider" android:layout_width="fill_parent" android:layout_height="@dimen/row_divider" />
+            <com.deliveroo.common.ui.UiKitDefaultRow android:id="@id/subscription_plan" android:layout_width="fill_parent" android:layout_height="wrap_content" app:right_number_type="secondary_bold" app:right_option="number" />
+            <View android:id="@id/subscription_plan_bottom_divider" android:background="@color/row_divider" android:layout_width="fill_parent" android:layout_height="@dimen/row_divider" android:layout_marginBottom="@dimen/spacing_large" />
+            <View android:id="@id/manage_subscription_top_divider" android:background="@color/row_divider" android:layout_width="fill_parent" android:layout_height="@dimen/row_divider" />
+            <com.deliveroo.common.ui.UiKitDefaultRow android:id="@id/pause_resume_subscription_row" android:layout_width="fill_parent" android:layout_height="wrap_content" app:right_icon="@drawable/uikit_ic_chevron_right" app:right_icon_type="action" app:right_option="icon" />
+            <View android:id="@id/manage_subscription_mid_divider" android:background="@color/row_divider" android:layout_width="fill_parent" android:layout_height="@dimen/row_divider" android:layout_marginStart="@dimen/padding_medium" />
+            <com.deliveroo.common.ui.UiKitDefaultRow android:id="@id/cancel_subscription" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" app:right_icon="@drawable/uikit_ic_chevron_right" app:right_icon_type="action" app:right_option="icon" />
+            <View android:id="@id/manage_subscription_bottom_divider" android:background="@color/row_divider" android:layout_width="fill_parent" android:layout_height="@dimen/row_divider" />
+            <FrameLayout android:id="@id/payment_method_container" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/padding_small" />
+        </LinearLayout>
+    </ScrollView>
+    <com.deliveroo.orderapp.core.ui.view.MaterialProgressView android:layout_gravity="center" android:id="@id/progress_view" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <androidx.appcompat.widget.Toolbar android:id="@id/toolbar" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Toolbar.Brand.Transparent" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

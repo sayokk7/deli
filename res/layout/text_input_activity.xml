@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:background="@color/anchovy_5" android:focusable="true" android:focusableInTouchMode="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.appcompat.widget.Toolbar android:id="@id/toolbar" android:layout_width="0.0dip" android:layout_height="?android:actionBarSize" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" style="@style/Toolbar" />
+    <ScrollView android:layout_width="0.0dip" android:layout_height="0.0dip" app:layout_constraintBottom_toTopOf="@id/submit_button_panel" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/toolbar">
+        <LinearLayout android:orientation="vertical" android:paddingTop="@dimen/padding_large" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <View android:background="@color/anchovy_40" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+            <TextView android:id="@id/message" android:background="@color/white" android:paddingTop="@dimen/padding_medium" android:paddingBottom="@dimen/padding_medium" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="@dimen/keyline_1" android:paddingEnd="@dimen/keyline_1" style="@style/UIKit.TextAppearance.Body.Medium" />
+            <View android:background="@color/anchovy_40" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+            <com.google.android.material.textfield.TextInputLayout android:id="@id/input_field_container" android:background="@color/white" android:paddingTop="@dimen/padding_small" android:paddingBottom="@dimen/padding_small" android:layout_marginTop="@dimen/padding_medium" android:layout_marginBottom="0.0dip" android:paddingStart="@dimen/keyline_1" android:paddingEnd="@dimen/keyline_1" app:errorEnabled="false" style="@style/RooTextInputLayout">
+                <com.google.android.material.textfield.TextInputEditText android:id="@id/input_field" android:inputType="phone" android:importantForAutofill="no" style="@style/RooTextInput" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <View android:id="@id/go_back_action_top_divider" android:background="@color/row_divider" android:layout_width="fill_parent" android:layout_height="@dimen/menu_divider" android:layout_marginTop="@dimen/padding_large" />
+            <TextView android:gravity="center_vertical" android:id="@id/go_back_action" android:background="@color/white" android:paddingTop="@dimen/padding_medium" android:paddingBottom="@dimen/padding_medium" android:layout_width="fill_parent" android:layout_height="wrap_content" android:includeFontPadding="false" android:drawablePadding="@dimen/keyline_1" android:paddingStart="@dimen/keyline_1" android:paddingEnd="@dimen/keyline_1" style="@style/UIKit.TextAppearance.Body.Medium.Action" />
+            <View android:id="@id/go_back_bottom_divider" android:background="@color/row_divider" android:layout_width="fill_parent" android:layout_height="@dimen/menu_divider" />
+        </LinearLayout>
+    </ScrollView>
+    <FrameLayout android:id="@id/submit_button_panel" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:elevation="@dimen/elevation_default" app:layout_constraintBottom_toBottomOf="parent">
+        <com.deliveroo.common.ui.UiKitButton android:layout_gravity="center" android:id="@id/submit_button" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/keyline_1" />
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

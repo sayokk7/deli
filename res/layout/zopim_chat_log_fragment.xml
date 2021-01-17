@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:id="@id/chat_log_container" android:layout_width="fill_parent" android:layout_height="fill_parent" app:layout_behavior="com.zopim.android.sdk.chatlog.view.PushViewBehavior">
+        <include android:id="@id/input_container" layout="@layout/chat_input_view" />
+        <View android:background="@color/chat_bubble_stroke" android:layout_width="fill_parent" android:layout_height="@dimen/chat_bubble_stroke" android:layout_above="@id/input_container" />
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/recycler_view" android:paddingLeft="@dimen/chat_log_padding" android:paddingTop="@dimen/chat_log_padding" android:paddingRight="@dimen/chat_log_padding" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@android:color/transparent" android:drawSelectorOnTop="false" android:transcriptMode="alwaysScroll" android:divider="@android:color/transparent" android:layout_above="@id/input_container" android:layout_alignParentTop="true" />
+    </RelativeLayout>
+    <include android:id="@id/chat_log_no_agents_view" android:visibility="gone" layout="@layout/no_agents_view" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

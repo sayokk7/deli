@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:padding="@dimen/keyline_1" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:id="@id/warning_title" android:paddingTop="@dimen/padding_small" android:paddingBottom="@dimen/padding_small" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/UIKit.TextAppearance.Heading.XSmall" />
+    <TextView android:id="@id/warning_description" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/UIKit.TextAppearance.Body.Medium" />
+    <com.deliveroo.common.ui.UiKitButton android:id="@id/confirm" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/padding_small" app:type="primary" />
+    <com.deliveroo.common.ui.UiKitButton android:id="@id/dismiss" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/padding_small" app:type="secondary" />
+</LinearLayout>

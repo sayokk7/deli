@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/google_sign_in" android:background="@drawable/google_sign_in_button" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/keyline_1_half" android:layout_marginBottom="@dimen/keyline_1_half" android:layout_marginStart="@dimen/keyline_1" android:layout_marginEnd="@dimen/keyline_1"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:layout_gravity="center" android:id="@id/continue_with_google" android:paddingTop="@dimen/padding_medium" android:paddingBottom="@dimen/padding_medium" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/sign_up_continue_with_google" android:drawablePadding="@dimen/padding_small" app:drawableStartCompat="@drawable/ic_google_logo_18dp" style="@style/UIKit.TextAppearance.Body.Medium.Bold" />
+</FrameLayout>

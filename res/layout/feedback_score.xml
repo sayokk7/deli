@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:background="?android:selectableItemBackground" android:padding="@dimen/padding_large" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/score_icon" android:layout_width="@dimen/help_feedback_score_icon_size" android:layout_height="@dimen/help_feedback_score_icon_size" />
+    <TextView android:gravity="center" android:id="@id/score_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/keyline_1_half" style="@style/UIKit.TextAppearance.Body.Small.Bold" />
+</LinearLayout>

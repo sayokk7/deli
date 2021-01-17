@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:orientation="vertical" android:id="@id/content_view" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <androidx.appcompat.widget.Toolbar android:id="@id/toolbar" android:layout_width="fill_parent" android:layout_height="?android:actionBarSize" android:layout_marginBottom="@dimen/keyline_1" app:title="@string/sign_up_or_log_in" style="@style/Toolbar" />
+            <com.deliveroo.orderapp.shared.view.ErrorBanner android:id="@id/error_banner" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            <FrameLayout android:id="@id/facebook_login" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            <FrameLayout android:id="@id/google_login" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            <com.deliveroo.orderapp.core.ui.view.TextSeparatorView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/keyline_1_half" android:layout_marginBottom="@dimen/keyline_1" android:text="@string/log_in_with_facebook_google_or_email" android:layout_marginStart="@dimen/keyline_1" android:layout_marginEnd="@dimen/keyline_1" app:lineColor="@color/anchovy_40" app:textColor="@color/black_60" style="@style/UIKit.TextAppearance.Body.Medium.Secondary" />
+            <com.deliveroo.common.ui.UiKitButton android:id="@id/sign_in_with_email" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginStart="@dimen/keyline_1" android:layout_marginEnd="@dimen/keyline_1" app:icon="@drawable/uikit_ic_envelope" app:text="@string/sign_up_continue_with_email" />
+            <TextView android:id="@id/terms_and_privacy" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/keyline_1" android:layout_marginStart="@dimen/keyline_1" android:layout_marginEnd="@dimen/keyline_1" style="@style/UIKit.TextAppearance.Body.XSmall.Secondary" />
+            <TextView android:id="@id/use_of_information_gdpr" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/keyline_1" android:layout_marginStart="@dimen/keyline_1" android:layout_marginEnd="@dimen/keyline_1" style="@style/UIKit.TextAppearance.Body.XSmall.Secondary" />
+            <TextView android:id="@id/french_legal_text" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/keyline_1_half" android:layout_marginBottom="@dimen/keyline_1" android:layout_marginStart="@dimen/keyline_1" android:layout_marginEnd="@dimen/keyline_1" style="@style/UIKit.TextAppearance.Body.XSmall.Secondary" />
+        </LinearLayout>
+    </ScrollView>
+    <include android:id="@id/progress" layout="@layout/loading_progress_content" />
+</FrameLayout>

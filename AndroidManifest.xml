@@ -1,0 +1,953 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:compileSdkVersion="30" android:compileSdkVersionCodename="11" package="com.deliveroo.orderapp" platformBuildVersionCode="30" platformBuildVersionName="11">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <queries>
+        <package android:name="co.uk.getmondo"/>
+        <package android:name="com.google.android.gm"/>
+        <package android:name="com.facebook.katana"/>
+        <intent>
+            <action android:name="android.intent.action.VIEW"/>
+            <data android:scheme="https"/>
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW"/>
+            <data android:scheme="geo"/>
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.SENDTO"/>
+            <data android:scheme="mailto"/>
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.DIAL"/>
+            <data android:scheme="tel"/>
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.SEND"/>
+            <data android:mimeType="text/plain"/>
+        </intent>
+        <intent>
+            <action android:name="android.media.action.IMAGE_CAPTURE"/>
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.GET_CONTENT"/>
+            <data android:mimeType="image/*"/>
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW"/>
+            <category android:name="android.intent.category.BROWSABLE"/>
+            <data android:scheme="https"/>
+        </intent>
+    </queries>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+    <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+    <application android:allowBackup="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:extractNativeLibs="false" android:fullBackupContent="@xml/appsflyer_backup_rules" android:icon="@mipmap/ic_launcher" android:isSplitRequired="true" android:label="@string/app_name" android:name="com.deliveroo.orderapp.OrderApp" android:networkSecurityConfig="@xml/network_security_config" android:supportsRtl="true" android:theme="@style/AppTheme">
+        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="@string/google_maps_key"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+        <meta-data android:name="com.facebook.sdk.AutoInitEnabled" android:value="false"/>
+        <meta-data android:name="com.facebook.sdk.AutoLogAppEventsEnabled" android:value="false"/>
+        <meta-data android:name="io.branch.sdk.BranchKey" android:value="@string/branch_key"/>
+        <meta-data android:name="com.google.android.gms.wallet.api.enabled" android:value="true"/>
+        <meta-data android:name="asset_statements" android:resource="@string/asset_statements"/>
+        <provider android:authorities="com.deliveroo.orderapp.fileprovider" android:exported="false" android:grantUriPermissions="true" android:name="androidx.core.content.FileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/provider_paths"/>
+        </provider>
+        <activity android:launchMode="singleTask" android:name="com.braintreepayments.api.BraintreeBrowserSwitchActivity" android:screenOrientation="@integer/orientation">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <data android:scheme="com.deliveroo.orderapp.braintree"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:name="com.appboy.ui.AppboyWebViewActivity" android:screenOrientation="@integer/orientation"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="io.card.payment.CardIOActivity" android:screenOrientation="@integer/orientation"/>
+        <activity android:name="io.card.payment.DataEntryActivity" android:screenOrientation="@integer/orientation"/>
+        <service android:name="com.deliveroo.orderapp.services.MessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <activity android:label="" android:name="com.deliveroo.orderapp.checkout.ui.v1.CheckoutActivity" android:screenOrientation="@integer/orientation">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="checkout_v1" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="" android:name="com.deliveroo.orderapp.checkout.ui.v2.CheckoutActivity" android:screenOrientation="@integer/orientation">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="checkout_v2" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="" android:name="com.deliveroo.orderapp.checkout.ui.deliverynote.DeliveryNoteActivity" android:screenOrientation="@integer/orientation">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="delivery_note" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="" android:name="com.deliveroo.orderapp.addcard.ui.AddCardActivity" android:screenOrientation="@integer/orientation" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="add_card" android:pathPattern=".*" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="" android:name="com.deliveroo.orderapp.addcard.ui.addpaymentmethod.AddPaymentMethodActivity" android:screenOrientation="@integer/orientation">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="add_payment_method" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="" android:name="com.deliveroo.orderapp.home.ui.home.HomeActivity" android:screenOrientation="@integer/orientation">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="restaurants" android:scheme="deliveroo"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="home" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="" android:name="com.deliveroo.orderapp.home.ui.collection.CollectionActivity" android:parentActivityName="com.deliveroo.orderapp.home.ui.home.HomeActivity" android:screenOrientation="@integer/orientation">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="collection" android:scheme="deliveroo"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="offers" android:pathPattern=".*" android:scheme="deliveroo"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="menu_tags" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="@string/filters_title" android:name="com.deliveroo.orderapp.home.ui.filter.FiltersActivity" android:screenOrientation="@integer/orientation">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="filters" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="" android:name="com.deliveroo.orderapp.home.ui.search.SearchActivity" android:parentActivityName="com.deliveroo.orderapp.home.ui.home.HomeActivity" android:screenOrientation="@integer/orientation" android:theme="@style/AppTheme.Search" android:windowSoftInputMode="adjustResize|stateVisible">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="search" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="" android:name="com.deliveroo.orderapp.home.ui.notifyme.NotifyMeActivity" android:screenOrientation="@integer/orientation">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="notify_me" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="" android:name="com.deliveroo.orderapp.home.ui.searchcollection.SearchCollectionActivity" android:parentActivityName="com.deliveroo.orderapp.home.ui.home.HomeActivity" android:screenOrientation="@integer/orientation" android:theme="@style/AppTheme.Search">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="search_collection" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="" android:name="com.deliveroo.orderapp.home.ui.mapsearch.MapSearchActivity" android:screenOrientation="@integer/orientation">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="map_search" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="" android:name="com.deliveroo.orderapp.home.ui.home.rateorderdetail.RateOrderDetailActivity" android:theme="@style/AppTheme.Translucent.FullScreenBottomSheet">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="rate_order_detail" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="@string/item_title_account" android:name="com.deliveroo.orderapp.account.ui.AccountActionActivity" android:screenOrientation="@integer/orientation">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="account_action" android:pathPattern=".*" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/show_order_details" android:name="com.deliveroo.orderapp.account.ui.orderdetail.OrderDetailsActivity" android:screenOrientation="@integer/orientation">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="order_details" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="" android:name="com.deliveroo.orderapp.account.ui.account.AccountActivity" android:parentActivityName="com.deliveroo.orderapp.home.ui.home.HomeActivity" android:screenOrientation="@integer/orientation">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="account" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:name="com.deliveroo.orderapp.account.ui.orderhistory.OrderHistoryActivity" android:parentActivityName="com.deliveroo.orderapp.home.ui.home.HomeActivity" android:screenOrientation="@integer/orientation">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="orderhistory" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="" android:name="com.deliveroo.orderapp.mealcardissuers.ui.MealCardIssuersActivity" android:screenOrientation="@integer/orientation">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="meal_card_issuers" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="" android:name="com.deliveroo.orderapp.plus.ui.subscription.SubscriptionDetailsActivity" android:parentActivityName="com.deliveroo.orderapp.account.ui.account.AccountActivity" android:screenOrientation="@integer/orientation" android:theme="@style/AppTheme.Plus">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="subscription" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="" android:name="com.deliveroo.orderapp.plus.ui.managesubscription.pause.PauseSubscriptionActivity" android:screenOrientation="@integer/orientation" android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="pause_subscription" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="" android:name="com.deliveroo.orderapp.plus.ui.managesubscription.resume.ResumeSubscriptionDetailsActivity" android:screenOrientation="@integer/orientation" android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="resume_subscription" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="" android:name="com.deliveroo.orderapp.plus.ui.subscribe.SubscribeActivity" android:parentActivityName="com.deliveroo.orderapp.account.ui.account.AccountActivity" android:screenOrientation="@integer/orientation" android:theme="@style/AppTheme.Plus">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="subscribe" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="" android:name="com.deliveroo.orderapp.plus.ui.information.PlusInformationActivity" android:theme="@style/AppTheme.Translucent.FullScreenBottomSheet">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="plus_information" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="" android:launchMode="singleTask" android:name="com.deliveroo.orderapp.postordertipping.ui.TipRiderActivity" android:parentActivityName="com.deliveroo.orderapp.home.ui.home.HomeActivity" android:screenOrientation="@integer/orientation">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="post_order_tip" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="" android:launchMode="singleTask" android:name="com.deliveroo.orderapp.postordertipping.ui.TipRiderPaymentOutcomeActivity" android:parentActivityName="com.deliveroo.orderapp.postordertipping.ui.TipRiderActivity" android:screenOrientation="@integer/orientation">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="post_order_tip_payment_outcome" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="" android:name="com.deliveroo.orderapp.ui.activities.BasketActivity" android:screenOrientation="@integer/orientation">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="basket" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="" android:name="com.deliveroo.orderapp.ui.activities.AddAllergyNoteActivity" android:screenOrientation="@integer/orientation">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="add_allergy_note" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="" android:name="com.deliveroo.orderapp.ui.activities.AddProjectCodeActivity" android:screenOrientation="@integer/orientation">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="add_project_code" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="@string/content_description_order_status" android:launchMode="singleTask" android:name="com.deliveroo.orderapp.feature.orderstatus.OrderStatusV1Activity" android:parentActivityName="com.deliveroo.orderapp.home.ui.home.HomeActivity" android:screenOrientation="@integer/orientation" android:theme="@style/AppTheme.OrderStatus">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="order_status_v1" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="@string/content_description_order_status" android:launchMode="singleTask" android:name="com.deliveroo.orderapp.feature.orderstatus.OrderStatusV2Activity" android:parentActivityName="com.deliveroo.orderapp.home.ui.home.HomeActivity" android:screenOrientation="@integer/orientation" android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="order_status_v2" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="@string/content_description_order_status" android:name="com.deliveroo.orderapp.feature.orderstatus.router.OrderStatusRouterActivity" android:noHistory="true" android:theme="@style/AppTheme.Translucent">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="orders" android:scheme="deliveroo"/>
+                <data android:host="plus" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="" android:name="com.deliveroo.orderapp.feature.paymentredirect.PaymentRedirectActivity" android:screenOrientation="@integer/orientation"/>
+        <activity android:exported="false" android:label="" android:name="com.deliveroo.orderapp.feature.login.LoginActivity" android:screenOrientation="@integer/orientation" android:windowSoftInputMode="adjustNothing">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="login" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="" android:name="com.deliveroo.orderapp.feature.checkemail.CheckEmailActivity" android:screenOrientation="@integer/orientation" android:windowSoftInputMode="adjustNothing">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="check_email" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="" android:name="com.deliveroo.orderapp.feature.loginwithemail.LoginWithEmailActivity" android:screenOrientation="@integer/orientation" android:windowSoftInputMode="adjustNothing">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="login_with_email" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="" android:name="com.deliveroo.orderapp.feature.signup.SignUpActivity" android:screenOrientation="@integer/orientation">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="signup" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="" android:name="com.deliveroo.orderapp.verification.feature.verification.VerificationActivity" android:screenOrientation="@integer/orientation">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="verify" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="" android:name="com.deliveroo.orderapp.verification.feature.verificationcode.VerificationCodeActivity" android:screenOrientation="@integer/orientation"/>
+        <activity android:exported="false" android:label="" android:name="com.deliveroo.orderapp.feature.menu.MenuActivity" android:parentActivityName="com.deliveroo.orderapp.home.ui.home.HomeActivity" android:screenOrientation="@integer/orientation" android:theme="@style/AppTheme.Menu">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="menu" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="@string/custom_item_title" android:name="com.deliveroo.orderapp.feature.modifiers.ModifiersActivity" android:screenOrientation="@integer/orientation">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="item_modifiers" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="@string/past_order_page_title" android:name="com.deliveroo.orderapp.feature.pastorder.PastOrderActivity" android:screenOrientation="@integer/orientation">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="past_order" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="" android:name="com.deliveroo.orderapp.feature.restaurantinfo.RestaurantInfoActivity" android:screenOrientation="@integer/orientation">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="restaurant_info" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="" android:name="com.deliveroo.orderapp.feature.browsemenu.BrowseMenuActivity" android:screenOrientation="@integer/orientation" android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="browse_menu" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="" android:name="com.deliveroo.orderapp.feature.searchmenu.SearchMenuActivity" android:screenOrientation="@integer/orientation" android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="search_menu" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="" android:name="com.deliveroo.orderapp.feature.addressdetails.AddressDetailsActivity" android:screenOrientation="@integer/orientation" android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="address_details" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="" android:name="com.deliveroo.orderapp.feature.addresslabel.AddressLabelActivity" android:screenOrientation="@integer/orientation" android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="address_label" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="" android:name="com.deliveroo.orderapp.feature.editaccount.EditAccountActivity" android:screenOrientation="@integer/orientation" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="edit_account" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="" android:name="com.deliveroo.orderapp.place.ui.SearchLocationActivity"/>
+        <activity android:exported="false" android:label="" android:name="com.deliveroo.orderapp.riderchat.ui.RiderChatActivity" android:screenOrientation="@integer/orientation" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="rider_chat" android:pathPattern=".*" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="" android:name="com.deliveroo.orderapp.selectlocationonmap.ui.SelectLocationOnMapActivity" android:screenOrientation="@integer/orientation">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="select_location_on_map" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="" android:name="com.deliveroo.orderapp.selectpointonmap.ui.SelectPointOnMapActivity" android:screenOrientation="@integer/orientation">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="select_point_on_map" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="@string/item_customise_app" android:name="com.deliveroo.orderapp.appicon.ui.changeicon.CustomiseAppActivity" android:screenOrientation="@integer/orientation">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="change_icon" android:pathPattern=".*" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.deliveroo.orderapp.splash.ui.SplashActivity" android:screenOrientation="@integer/orientation" android:theme="@style/AppTheme.Splash">
+            <intent-filter>
+                <category android:name="android.intent.category.INFO"/>
+            </intent-filter>
+        </activity>
+        <activity-alias android:enabled="false" android:icon="@mipmap/pride_launcher" android:name="com.deliveroo.orderapp.appicon.pride" android:targetActivity="com.deliveroo.orderapp.splash.ui.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity-alias>
+        <activity-alias android:enabled="false" android:icon="@mipmap/plus_launcher" android:name="com.deliveroo.orderapp.appicon.plus" android:targetActivity="com.deliveroo.orderapp.splash.ui.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity-alias>
+        <activity-alias android:enabled="true" android:icon="@mipmap/ic_launcher" android:name="com.deliveroo.orderapp.appicon.default" android:targetActivity="com.deliveroo.orderapp.splash.ui.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity-alias>
+        <activity android:autoVerify="true" android:label="" android:name="com.deliveroo.orderapp.splash.ui.DeepLinkSplashActivity" android:screenOrientation="@integer/orientation" android:theme="@style/AppTheme.Splash.NoBackground">
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="deliveroo.onelink.me" android:pathPrefix="/{onelinkID}" android:scheme="https"/>
+                <data android:host="restaurants" android:scheme="deliveroo"/>
+                <data android:host="offers" android:pathPattern=".*" android:scheme="deliveroo"/>
+                <data android:host="menu_tags" android:scheme="deliveroo"/>
+                <data android:host="mgm" android:scheme="deliveroo"/>
+                <data android:host="restaurants" android:pathPattern="..*" android:scheme="deliveroo"/>
+                <data android:host="orderhelp" android:pathPattern="..*" android:scheme="deliveroo"/>
+                <data android:host="deep_link" android:scheme="deliveroo"/>
+                <data android:host="orders" android:pathPattern="..*" android:scheme="deliveroo"/>
+                <data android:host="post_order_tip" android:pathPattern="..*" android:scheme="deliveroo"/>
+                <data android:host="plus" android:scheme="deliveroo"/>
+                <data android:host="deliveroo.bttn.io" android:pathPattern=".*" android:scheme="https"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="http"/>
+                <data android:scheme="https"/>
+                <data android:host="deliveroo.ae"/>
+                <data android:host="deliveroo.be"/>
+                <data android:host="deliveroo.co.uk"/>
+                <data android:host="deliveroo.com.sg"/>
+                <data android:host="deliveroo.com.au"/>
+                <data android:host="deliveroo.es"/>
+                <data android:host="deliveroo.fr"/>
+                <data android:host="deliveroo.de"/>
+                <data android:host="deliveroo.hk"/>
+                <data android:host="deliveroo.ie"/>
+                <data android:host="deliveroo.it"/>
+                <data android:host="deliveroo.nl"/>
+                <data android:host="deliveroo.tw"/>
+                <data android:host="deliveroo.com.kw"/>
+                <data android:path="/"/>
+                <data android:path="/en"/>
+                <data android:path="/en/"/>
+                <data android:path="/ar"/>
+                <data android:path="/ar/"/>
+                <data android:path="/fr"/>
+                <data android:path="/fr/"/>
+                <data android:path="/nl"/>
+                <data android:path="/nl/"/>
+                <data android:path="/nl-be"/>
+                <data android:path="/nl-be/"/>
+                <data android:path="/es"/>
+                <data android:path="/es/"/>
+                <data android:path="/fr"/>
+                <data android:path="/fr/"/>
+                <data android:path="/de"/>
+                <data android:path="/de/"/>
+                <data android:path="/zh"/>
+                <data android:path="/zh/"/>
+                <data android:path="/it"/>
+                <data android:path="/it/"/>
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="http"/>
+                <data android:scheme="https"/>
+                <data android:host="deliveroo.ae"/>
+                <data android:host="deliveroo.be"/>
+                <data android:host="deliveroo.co.uk"/>
+                <data android:host="deliveroo.com.sg"/>
+                <data android:host="deliveroo.com.au"/>
+                <data android:host="deliveroo.es"/>
+                <data android:host="deliveroo.fr"/>
+                <data android:host="deliveroo.de"/>
+                <data android:host="deliveroo.hk"/>
+                <data android:host="deliveroo.ie"/>
+                <data android:host="deliveroo.it"/>
+                <data android:host="deliveroo.nl"/>
+                <data android:host="deliveroo.tw"/>
+                <data android:host="deliveroo.com.kw"/>
+                <data android:pathPrefix="/menu/"/>
+                <data android:pathPrefix="/en/menu/"/>
+                <data android:pathPrefix="/ar/menu/"/>
+                <data android:pathPrefix="/fr/menu/"/>
+                <data android:pathPrefix="/nl/menu/"/>
+                <data android:pathPrefix="/nl-be/menu/"/>
+                <data android:pathPrefix="/es/menu/"/>
+                <data android:pathPrefix="/fr/menu/"/>
+                <data android:pathPrefix="/de/menu/"/>
+                <data android:pathPrefix="/zh/menu/"/>
+                <data android:pathPrefix="/it/menu/"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="deliveroo.app.link" android:scheme="https"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="campaign.deliveroo.com" android:scheme="https"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="http"/>
+                <data android:scheme="https"/>
+                <data android:host="deliveroo.ae"/>
+                <data android:host="deliveroo.be"/>
+                <data android:host="deliveroo.co.uk"/>
+                <data android:host="deliveroo.com.sg"/>
+                <data android:host="deliveroo.com.au"/>
+                <data android:host="deliveroo.es"/>
+                <data android:host="deliveroo.fr"/>
+                <data android:host="deliveroo.de"/>
+                <data android:host="deliveroo.hk"/>
+                <data android:host="deliveroo.ie"/>
+                <data android:host="deliveroo.it"/>
+                <data android:host="deliveroo.nl"/>
+                <data android:host="deliveroo.tw"/>
+                <data android:host="deliveroo.com.kw"/>
+                <data android:pathPrefix="/c/"/>
+                <data android:pathPrefix="/en/c/"/>
+                <data android:pathPrefix="/ar/c/"/>
+                <data android:pathPrefix="/fr/c/"/>
+                <data android:pathPrefix="/nl/c/"/>
+                <data android:pathPrefix="/nl-be/c/"/>
+                <data android:pathPrefix="/es/c/"/>
+                <data android:pathPrefix="/fr/c/"/>
+                <data android:pathPrefix="/de/c/"/>
+                <data android:pathPrefix="/zh/c/"/>
+                <data android:pathPrefix="/it/c/"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="" android:name="com.deliveroo.orderapp.address.ui.addaddress.AddAddressActivity" android:screenOrientation="@integer/orientation" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="add_address" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="" android:name="com.deliveroo.orderapp.confirmaddress.ui.ConfirmAddressActivity" android:screenOrientation="@integer/orientation">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="confirm_address" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="" android:name="com.deliveroo.orderapp.onboarding.ui.personalisation.PersonalisationActivity" android:screenOrientation="@integer/orientation" android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="personalisation" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="" android:name="com.deliveroo.orderapp.pricing.ui.feesinformation.FeesInformationActivity" android:theme="@style/AppTheme.Translucent.FullScreenBottomSheet">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="fees_information" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="@string/order_help_action" android:name="com.deliveroo.orderapp.orderhelp.ui.OrderHelpRouterActivity" android:noHistory="true" android:theme="@style/AppTheme.Translucent">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="orderhelp" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="@string/order_help_action" android:name="com.deliveroo.orderapp.orderhelp.ui.webview.OrderHelpWebViewActivity" android:parentActivityName="com.deliveroo.orderapp.home.ui.home.HomeActivity" android:screenOrientation="@integer/orientation">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="orderhelp_webview" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="@string/order_help_action" android:name="com.deliveroo.orderapp.orderhelp.ui.action.feature.help.HelpActionsActivity" android:parentActivityName="com.deliveroo.orderapp.home.ui.home.HomeActivity" android:screenOrientation="@integer/orientation">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="help_actions" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="" android:name="com.deliveroo.orderapp.orderhelp.ui.action.feature.itemselection.HelpDetailsItemSelectionActivity" android:parentActivityName="com.deliveroo.orderapp.home.ui.home.HomeActivity" android:screenOrientation="@integer/orientation">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="help_item_selection" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="" android:name="com.deliveroo.orderapp.orderhelp.ui.action.feature.issueresolution.HelpResolutionActivity" android:parentActivityName="com.deliveroo.orderapp.home.ui.home.HomeActivity" android:screenOrientation="@integer/orientation">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="help_resolution" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="" android:name="com.deliveroo.orderapp.orderhelp.ui.action.feature.helpfeedback.HelpFeedbackScoreActivity" android:parentActivityName="com.deliveroo.orderapp.home.ui.home.HomeActivity" android:screenOrientation="@integer/orientation">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="help_feedback_score" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="" android:name="com.deliveroo.orderapp.orderhelp.ui.action.feature.helpfeedback.HelpFeedbackTextActivity" android:parentActivityName="com.deliveroo.orderapp.home.ui.home.HomeActivity" android:screenOrientation="@integer/orientation">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="help_feedback_text" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="" android:name="com.deliveroo.orderapp.orderhelp.ui.action.feature.orderhelpstarter.OrderHelpStarterActivity" android:theme="@style/AppTheme.Translucent">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="orderhelp_actions_starter" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="" android:name="com.deliveroo.orderapp.orderhelp.ui.action.feature.helptextphoto.HelpTextPhotoActivity" android:parentActivityName="com.deliveroo.orderapp.home.ui.home.HomeActivity" android:screenOrientation="@integer/orientation" android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="help_text_photo" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="" android:name="com.deliveroo.orderapp.orderhelp.ui.action.feature.cancelorder.CancelOrderActivity" android:parentActivityName="com.deliveroo.orderapp.home.ui.home.HomeActivity" android:screenOrientation="@integer/orientation" android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="cancel_order" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="" android:name="com.deliveroo.orderapp.orderhelp.ui.action.feature.textinput.TextInputActivity" android:parentActivityName="com.deliveroo.orderapp.home.ui.home.HomeActivity" android:screenOrientation="@integer/orientation" android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="help_text_input" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="" android:name="com.deliveroo.orderapp.orderhelp.ui.action.feature.emptystate.HelpEmptyStateActivity" android:parentActivityName="com.deliveroo.orderapp.home.ui.home.HomeActivity" android:screenOrientation="@integer/orientation">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="help_empty_state" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="" android:launchMode="singleTask" android:name="com.deliveroo.orderapp.orderhelp.ui.action.feature.livechat.LiveChatActivity" android:parentActivityName="com.deliveroo.orderapp.home.ui.home.HomeActivity" android:screenOrientation="@integer/orientation" android:theme="@style/AppTheme.Zopim" android:windowSoftInputMode="adjustResize|stateUnchanged">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="live_chat" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="" android:name="com.deliveroo.orderapp.orderhelp.ui.action.feature.helpactionsbottomsheet.ActionsBottomSheetActivity" android:parentActivityName="com.deliveroo.orderapp.home.ui.home.HomeActivity" android:theme="@style/AppTheme.Translucent">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="help_actions_bottom_sheet" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <receiver android:name="com.deliveroo.orderapp.orderhelp.ui.action.feature.livechatnotifications.StopLiveChatNotificationsReceiver"/>
+        <service android:exported="false" android:name="com.deliveroo.orderapp.orderhelp.ui.action.feature.livechatnotifications.LiveChatNotificationsService"/>
+        <activity android:exported="false" android:label="" android:name="com.deliveroo.orderapp.imagepicker.ui.ImagePickerActivity" android:theme="@style/AppTheme.Translucent.FullScreenBottomSheet">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="image_picker" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="" android:name="com.deliveroo.orderapp.webview.ui.wrapper.WebViewWrapperActivity" android:parentActivityName="com.deliveroo.orderapp.home.ui.home.HomeActivity" android:screenOrientation="@integer/orientation">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="webview" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="" android:name="com.deliveroo.orderapp.agentchat.ui.AgentChatActivity" android:screenOrientation="@integer/orientation" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="agent_chat" android:pathPattern=".*" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="" android:name="com.deliveroo.orderapp.mgm.ui.MgmActivity" android:parentActivityName="com.deliveroo.orderapp.account.ui.account.AccountActivity" android:screenOrientation="@integer/orientation" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="mgm_home" android:scheme="deliveroo"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="mgm" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="" android:name="com.deliveroo.orderapp.mgm.ui.mgmshare.MgmShareActivity" android:theme="@style/AppTheme.Translucent" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="mgm-sharesheet" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="" android:name="com.deliveroo.orderapp.rewards.ui.information.RewardsInformationActivity" android:theme="@style/AppTheme.Translucent.FullScreenBottomSheet">
+            <intent-filter>
+                <action android:name="com.deliveroo.orderapp.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="rewards_information" android:scheme="deliveroo"/>
+            </intent-filter>
+        </activity>
+        <activity android:launchMode="singleTop" android:name="com.deliveroo.android.reactivelocation.connection.ConnectionResolutionActivity" android:theme="@style/Theme.Translucent"/>
+        <activity android:launchMode="singleTop" android:name="com.deliveroo.android.reactivelocation.permissions.PermissionsResolutionActivity" android:theme="@style/Theme.Translucent"/>
+        <activity android:launchMode="singleTop" android:name="com.deliveroo.android.reactivelocation.settings.SettingsResolutionActivity" android:theme="@style/Theme.Translucent"/>
+        <activity android:name="com.stripe.android.view.AddPaymentMethodActivity" android:theme="@style/StripeDefaultTheme"/>
+        <activity android:name="com.stripe.android.view.PaymentMethodsActivity" android:theme="@style/StripeDefaultTheme"/>
+        <activity android:name="com.stripe.android.view.PaymentFlowActivity" android:theme="@style/StripeDefaultTheme"/>
+        <activity android:name="com.stripe.android.view.PaymentAuthWebViewActivity" android:theme="@style/StripeDefaultTheme" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="com.stripe.android.view.PaymentRelayActivity" android:theme="@style/StripeDefaultTheme"/>
+        <activity android:name="com.stripe.android.view.Stripe3ds2CompletionActivity" android:theme="@style/StripeDefaultTheme"/>
+        <activity android:name="com.stripe.android.paymentsheet.PaymentSheetActivity" android:theme="@style/StripePaymentSheetDefaultTheme"/>
+        <activity android:name="com.stripe.android.paymentsheet.PaymentOptionsActivity" android:theme="@style/StripePaymentSheetDefaultTheme"/>
+        <activity android:name="com.stripe.android.stripe3ds2.views.ChallengeActivity" android:theme="@style/Stripe3DS2Theme"/>
+        <activity android:name="com.stripe.android.stripe3ds2.views.ChallengeProgressActivity" android:theme="@style/Stripe3DS2Theme"/>
+        <activity android:name="com.mikepenz.aboutlibraries.ui.LibsActivity"/>
+        <provider android:authorities="com.deliveroo.orderapp.firebaseperfprovider" android:exported="false" android:initOrder="101" android:name="com.google.firebase.perf.provider.FirebasePerfProvider"/>
+        <service android:directBootAware="true" android:exported="false" android:name="com.google.firebase.components.ComponentDiscoveryService">
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.perf.FirebasePerfRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.crashlytics.CrashlyticsRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.iid.Registrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.remoteconfig.RemoteConfigRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.abt.component.AbtRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+        </service>
+        <service android:exported="false" android:name="com.zopim.android.sdk.widget.ChatWidgetService" android:stopWithTask="true"/>
+        <activity android:label="@string/chat_activity_title" android:name="com.zopim.android.sdk.prechat.ZopimChatActivity" android:theme="@style/ZopimChatTheme" android:windowSoftInputMode="adjustResize|stateUnchanged">
+            <intent-filter android:priority="-1000">
+                <action android:name="zopim.action.RESUME_CHAT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/rate_this_chat_leave_a_comment_title" android:name="com.zopim.android.sdk.chatlog.ZopimCommentActivity" android:theme="@style/ZopimChatTheme" android:windowSoftInputMode="adjustResize"/>
+        <service android:name="com.braintreepayments.api.internal.AnalyticsIntentService"/>
+        <activity android:name="com.braintreepayments.api.ThreeDSecureActivity"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:name="com.facebook.FacebookActivity" android:theme="@style/com_facebook_activity_theme"/>
+        <activity android:name="com.facebook.CustomTabMainActivity"/>
+        <activity android:exported="true" android:name="com.facebook.CustomTabActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="cct.com.deliveroo.orderapp" android:scheme="fbconnect"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:name="com.appboy.ui.activities.AppboyFeedActivity"/>
+        <activity android:exported="false" android:name="com.appboy.ui.activities.AppboyContentCardsActivity"/>
+        <activity android:exported="false" android:launchMode="singleInstance" android:name="com.appboy.push.AppboyNotificationRoutingActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <receiver android:exported="false" android:name="com.appboy.BrazePushReceiver"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:exported="true" android:name="com.google.android.gms.auth.api.signin.RevocationBoundService" android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" android:visibleToInstantApps="true"/>
+        <service android:directBootAware="true" android:exported="false" android:name="com.google.firebase.messaging.FirebaseMessagingService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <receiver android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+            </intent-filter>
+        </receiver>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <provider android:authorities="com.deliveroo.orderapp.firebaseinitprovider" android:directBootAware="true" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementReceiver"/>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:exported="false" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <provider android:authorities="com.deliveroo.orderapp.FacebookInitProvider" android:exported="false" android:name="com.facebook.internal.FacebookInitProvider"/>
+        <receiver android:exported="false" android:name="com.facebook.CurrentAccessTokenExpirationBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="com.deliveroo.orderapp.lifecycle-process" android:exported="false" android:multiprocess="true" android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"/>
+        <service android:exported="false" android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery">
+            <meta-data android:name="backend:com.google.android.datatransport.cct.CctBackendFactory" android:value="cct"/>
+        </service>
+        <service android:exported="false" android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <receiver android:exported="false" android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"/>
+        <activity android:enabled="false" android:exported="false" android:launchMode="singleInstance" android:name="com.google.android.play.core.missingsplits.PlayCoreMissingSplitsActivity" android:process=":playcore_missing_splits_activity" android:stateNotNeeded="true"/>
+        <activity android:enabled="false" android:exported="false" android:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity" android:stateNotNeeded="true" android:theme="@style/Theme.PlayCore.Transparent"/>
+        <service android:enabled="false" android:exported="true" android:name="com.google.android.play.core.assetpacks.AssetPackExtractionService"/>
+        <meta-data android:name="com.bumptech.glide.integration.okhttp3.OkHttpGlideModule" android:value="GlideModule"/>
+        <service android:exported="false" android:name="com.zopim.android.sdk.api.ChatService"/>
+        <activity android:name="com.braintreepayments.api.GooglePaymentActivity" android:theme="@style/bt_transparent_activity"/>
+        <receiver android:exported="false" android:name="com.appboy.receivers.AppboyActionReceiver"/>
+        <provider android:authorities="com.deliveroo.orderapp.belvedere.attachments" android:exported="false" android:grantUriPermissions="true" android:name="com.zendesk.belvedere.BelvedereFileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/belvedere_attachment_storage"/>
+        </provider>
+        <meta-data android:name="com.android.vending.splits.required" android:value="true"/>
+        <meta-data android:name="com.android.stamp.source" android:value="https://play.google.com/store"/>
+        <meta-data android:name="com.android.stamp.type" android:value="STAMP_TYPE_DISTRIBUTION_APK"/>
+        <meta-data android:name="com.android.vending.splits" android:resource="@xml/splits0"/>
+        <meta-data android:name="com.android.vending.derived.apk.id" android:value="2"/>
+    </application>
+</manifest>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.Guideline android:orientation="vertical" android:id="@id/banner_start" android:layout_width="wrap_content" android:layout_height="wrap_content" app:layout_constraintGuide_begin="@dimen/banner_padding" />
+    <androidx.constraintlayout.widget.Guideline android:orientation="vertical" android:id="@id/banner_end" android:layout_width="wrap_content" android:layout_height="wrap_content" app:layout_constraintGuide_end="@dimen/banner_padding" />
+    <androidx.constraintlayout.widget.Guideline android:orientation="horizontal" android:id="@id/banner_bottom" android:layout_width="wrap_content" android:layout_height="wrap_content" app:layout_constraintGuide_end="@dimen/banner_padding" />
+    <ImageView android:id="@id/banner_promo_background" android:layout_width="0.0dip" android:layout_height="0.0dip" android:scaleType="matrix" android:alpha="0.1" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" app:srcCompat="@drawable/banner_promo_background" />
+    <ImageView android:id="@id/banner_image" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="@dimen/banner_padding" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toStartOf="@id/banner_content" app:layout_constraintStart_toStartOf="@id/banner_start" app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout android:orientation="vertical" android:id="@id/banner_content" android:layout_width="0.0dip" android:layout_height="wrap_content" app:layout_constraintBottom_toTopOf="@id/banner_bottom" app:layout_constraintEnd_toStartOf="@id/banner_cta" app:layout_constraintStart_toEndOf="@id/banner_image" app:layout_constraintTop_toTopOf="parent">
+        <TextView android:id="@id/banner_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/banner_padding" style="@style/UIKit.TextAppearance.Body.Medium.Bold.Inverted" />
+        <TextView android:id="@id/banner_message" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/banner_message_top_padding" style="@style/UIKit.TextAppearance.Body.Small.Inverted" />
+        <com.deliveroo.common.ui.UiKitButton android:id="@id/banner_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/banner_button_top_padding" app:inverted="true" app:type="secondary" />
+    </LinearLayout>
+    <FrameLayout android:id="@id/banner_cta" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingStart="@dimen/banner_cta_icon_start_padding" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="@id/banner_end" app:layout_constraintStart_toEndOf="@id/banner_content" app:layout_constraintTop_toTopOf="parent">
+        <ImageView android:id="@id/banner_cta_icon" android:background="?selectableItemBackgroundBorderless" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

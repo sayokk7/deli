@@ -1,0 +1,26 @@
+.class public interface abstract Lcom/deliveroo/orderapp/home/ui/search/SearchAdapter$OnClickListener;
+.super Ljava/lang/Object;
+.source "SearchAdapter.kt"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/deliveroo/orderapp/home/ui/search/SearchAdapter;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x609
+    name = "OnClickListener"
+.end annotation
+
+
+# virtual methods
+.method public abstract onItemClicked(Lcom/deliveroo/orderapp/home/ui/search/SearchItem;)V
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/deliveroo/orderapp/home/ui/search/SearchItem<",
+            "*>;)V"
+        }
+    .end annotation
+.end method

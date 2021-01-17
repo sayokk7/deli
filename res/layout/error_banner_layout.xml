@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:background="@drawable/rounded_corners_background_red" android:paddingTop="@dimen/padding_medium" android:paddingBottom="@dimen/padding_medium" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/padding_small" android:layout_marginBottom="@dimen/keyline_1" android:paddingStart="@dimen/keyline_1" android:paddingEnd="@dimen/keyline_1" android:layout_marginStart="@dimen/keyline_1" android:layout_marginEnd="@dimen/keyline_1"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingEnd="@dimen/keyline_1" app:srcCompat="@drawable/uikit_ic_info_circle" app:tint="@color/white" />
+    <TextView android:id="@id/info_banner_text_view" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/UIKit.TextAppearance.Body.Medium.Bold.Inverted" />
+</LinearLayout>

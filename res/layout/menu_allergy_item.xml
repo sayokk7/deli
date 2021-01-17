@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.deliveroo.common.ui.UiKitDefaultRow android:id="@id/menu_more_info_row" android:layout_width="fill_parent" android:layout_height="wrap_content" app:left_icon="@drawable/uikit_ic_info_circle" app:left_icon_type="decorative" app:left_option="icon" app:subtitle="@string/menu_more_info_subtitle" app:title="@string/menu_more_info_title"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" />

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge android:id="@id/attachment_image_container" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/attachment_thumbnail" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/bg_picasso_placeholder" android:adjustViewBounds="true" />
+    <androidx.core.widget.ContentLoadingProgressBar android:layout_gravity="bottom" android:id="@id/attachment_progress" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:indeterminate="true" style="?android:progressBarStyleHorizontal" />
+</merge>

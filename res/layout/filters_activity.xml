@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/anchovy_5" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.appcompat.widget.Toolbar android:id="@id/toolbar" android:layout_width="fill_parent" android:layout_height="?android:actionBarSize" android:accessibilityTraversalBefore="@id/filters_list" style="@style/Toolbar" />
+    <androidx.recyclerview.widget.RecyclerView android:id="@id/filters_list" android:scrollbars="vertical" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" android:accessibilityTraversalBefore="@id/done_button" app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/buttons_view" android:background="@color/white" android:padding="@dimen/padding_medium" android:layout_width="fill_parent" android:layout_height="wrap_content" android:elevation="@dimen/elevation_default">
+        <com.deliveroo.common.ui.UiKitButton android:id="@id/clear_button" android:focusable="true" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" android:importantForAccessibility="yes" android:layout_marginEnd="@dimen/padding_medium" android:accessibilityTraversalBefore="@id/done_button" app:text="@string/filters_clear_button_label" app:type="secondary" />
+        <com.deliveroo.common.ui.UiKitButton android:id="@id/done_button" android:focusable="true" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" android:importantForAccessibility="yes" app:text="@string/filters_done_button_label" />
+    </LinearLayout>
+</LinearLayout>

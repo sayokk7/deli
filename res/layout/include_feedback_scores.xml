@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:id="@id/header" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/padding_large" android:layout_marginStart="@dimen/keyline_1" android:layout_marginEnd="@dimen/keyline_1" style="@style/UIKit.TextAppearance.Heading.XSmall" />
+    <View android:background="@color/anchovy_40" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="@dimen/keyline_1" />
+    <TextView android:id="@id/text" android:background="@color/white" android:paddingTop="@dimen/padding_medium" android:paddingBottom="@dimen/padding_medium" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="@dimen/keyline_1" android:paddingEnd="@dimen/keyline_1" style="@style/UIKit.TextAppearance.Body.Medium" />
+    <View android:background="@color/anchovy_40" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginBottom="@dimen/keyline_1_half" />
+    <TextView android:id="@id/scores_header" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/keyline_1" android:layout_marginBottom="@dimen/padding_medium" android:layout_marginStart="@dimen/keyline_1" android:layout_marginEnd="@dimen/keyline_1" style="@style/UIKit.TextAppearance.Heading.XSmall" />
+    <include layout="@layout/layout_divider_action" />
+    <com.deliveroo.orderapp.orderhelp.ui.action.feature.helpfeedback.HelpFeedbackScoreView android:id="@id/scores" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <include layout="@layout/layout_divider_action" />
+</LinearLayout>

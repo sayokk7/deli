@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:background="@color/white" android:padding="@dimen/keyline_1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/subscription_benefit_min_height"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView android:id="@id/icon" android:layout_width="@dimen/subscription_benefit_icon_size" android:layout_height="@dimen/subscription_benefit_icon_size" android:layout_marginStart="@dimen/padding_xsmall" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+    <TextView android:id="@id/heading" android:layout_width="0.0dip" android:layout_height="wrap_content" android:paddingStart="@dimen/keyline_1" android:paddingEnd="@dimen/keyline_1" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toEndOf="@id/icon" app:layout_constraintTop_toTopOf="parent" style="@style/UIKit.TextAppearance.Body.Medium.Bold" />
+</androidx.constraintlayout.widget.ConstraintLayout>

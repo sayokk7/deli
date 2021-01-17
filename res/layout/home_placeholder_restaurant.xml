@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/keyline_1" android:layout_marginBottom="@dimen/padding_xsmall" android:layout_marginStart="@dimen/keyline_1" android:layout_marginEnd="@dimen/keyline_1"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout android:id="@id/placeholder_image_container" android:background="@drawable/placeholder_image_background" android:layout_width="0.0dip" android:layout_height="0.0dip" app:layout_constraintDimensionRatio="H,16:9" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent">
+        <ImageView android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/placeholder_restaurant" android:scaleType="centerCrop" />
+        <com.deliveroo.orderapp.core.ui.view.placeholder.PlaceholderView android:id="@id/placeholder_image" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </FrameLayout>
+    <com.deliveroo.orderapp.core.ui.view.placeholder.PlaceholderView android:id="@id/placeholder" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginTop="@dimen/padding_small" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/placeholder_image_container" />
+</androidx.constraintlayout.widget.ConstraintLayout>

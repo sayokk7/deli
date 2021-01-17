@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/donation_item" android:background="@drawable/charity_donation_item_background_selector" android:padding="@dimen/keyline_1" android:layout_width="@dimen/charitable_donation_option_item_width" android:layout_height="wrap_content" android:foreground="?android:selectableItemBackground" android:elevation="@dimen/charitable_donation_option_item_elevation"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:id="@id/donation_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/padding_xsmall" style="@style/UIKit.TextAppearance.Body.Medium.Bold.Action" />
+    <TextView android:id="@id/donation_amount" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/UIKit.TextAppearance.Body.Small.Secondary" />
+</LinearLayout>

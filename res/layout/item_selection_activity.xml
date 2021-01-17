@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/main_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.appcompat.widget.Toolbar android:id="@id/toolbar" android:layout_width="fill_parent" android:layout_height="?android:actionBarSize" style="@style/Toolbar" />
+    <FrameLayout android:id="@id/banner_container" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/recycler_view" android:layout_width="fill_parent" android:layout_height="fill_parent" app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+    </FrameLayout>
+    <FrameLayout android:layout_gravity="bottom" android:id="@id/submit_panel" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:elevation="@dimen/elevation_default">
+        <com.deliveroo.common.ui.UiKitButton android:id="@id/submit_button" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/keyline_1" />
+    </FrameLayout>
+</LinearLayout>

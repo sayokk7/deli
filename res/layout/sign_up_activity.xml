@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:focusable="true" android:focusableInTouchMode="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.appcompat.widget.Toolbar android:id="@id/toolbar" android:layout_width="0.0dip" android:layout_height="?android:actionBarSize" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" style="@style/Toolbar" />
+    <FrameLayout android:id="@id/footer" android:background="@android:color/white" android:padding="@dimen/keyline_1" android:layout_width="0.0dip" android:layout_height="wrap_content" android:elevation="@dimen/elevation_default" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent">
+        <com.deliveroo.common.ui.UiKitButton android:layout_gravity="center_horizontal" android:id="@id/create_account" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="@dimen/keyline_1" android:paddingEnd="@dimen/keyline_1" app:text="@string/create_account" />
+    </FrameLayout>
+    <FrameLayout android:id="@id/content" android:layout_width="fill_parent" android:layout_height="0.0dip" app:layout_constraintBottom_toTopOf="@id/footer" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/toolbar">
+        <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:orientation="vertical" android:padding="@dimen/keyline_1" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <com.google.android.material.textfield.TextInputLayout android:id="@id/first_name_label" style="@style/RooTextInputLayout">
+                    <com.google.android.material.textfield.TextInputEditText android:id="@id/first_name" android:inputType="textPersonName|textCapSentences" style="@style/RooTextInput" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout android:id="@id/second_name_label" style="@style/RooTextInputLayout">
+                    <com.google.android.material.textfield.TextInputEditText android:id="@id/second_name" android:inputType="textPersonName|textCapSentences" style="@style/RooTextInput" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout android:id="@id/email_address_label" android:hint="@string/email_address" style="@style/RooTextInputLayout">
+                    <com.google.android.material.textfield.TextInputEditText android:id="@id/email_address" android:inputType="textEmailAddress" android:autofillHints="emailAddress" android:importantForAutofill="yes" style="@style/RooTextInput" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.deliveroo.orderapp.shared.view.PasswordToggleView android:id="@id/password" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                <TextView android:id="@id/password_description" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="-8.0dip" android:paddingStart="@dimen/padding_xsmall" style="@style/UIKit.TextAppearance.Body.XSmall.Secondary" />
+                <CheckBox android:id="@id/generic_marketing_preferences" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/padding_large" android:layout_marginBottom="@dimen/padding_large" android:layout_marginEnd="@dimen/padding_xsmall" style="@style/MarketingPreferencesCheckBox" />
+                <CheckBox android:id="@id/profile_based_marketing_preferences" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/padding_large" android:layout_marginBottom="@dimen/padding_large" android:layout_marginStart="@dimen/keyline_1" style="@style/MarketingPreferencesCheckBox" />
+            </LinearLayout>
+        </ScrollView>
+    </FrameLayout>
+    <include android:id="@id/progress" android:layout_width="0.0dip" android:layout_height="0.0dip" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/toolbar" layout="@layout/include_progress_panel" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/root_container" android:background="?android:selectableItemBackground" android:paddingTop="@dimen/padding_medium" android:paddingBottom="@dimen/padding_medium" android:descendantFocusability="blocksDescendants" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="@dimen/keyline_1" android:paddingEnd="@dimen/keyline_1"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Space android:id="@id/space_for_modifier" android:layout_width="@dimen/padding_large" android:layout_height="1.0dip" />
+    <CheckedTextView android:gravity="center_vertical" android:id="@id/name" android:duplicateParentState="true" android:layout_width="0.0dip" android:layout_height="wrap_content" android:checkMark="?android:listChoiceIndicatorMultiple" android:layout_weight="1.0" style="@style/UIKit.TextAppearance.Body.Medium" />
+</LinearLayout>

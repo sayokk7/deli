@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:background="@color/anchovy_5" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.appcompat.widget.Toolbar android:id="@id/toolbar" android:layout_width="0.0dip" android:layout_height="?android:actionBarSize" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" style="@style/Toolbar" />
+    <ScrollView android:layout_width="0.0dip" android:layout_height="0.0dip" app:layout_constraintBottom_toTopOf="@id/close_button_panel" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/toolbar">
+        <include android:id="@id/help_action_header" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/help_action_header" />
+    </ScrollView>
+    <FrameLayout android:layout_gravity="bottom" android:id="@id/close_button_panel" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:elevation="@dimen/elevation_default" app:layout_constraintBottom_toBottomOf="parent">
+        <com.deliveroo.common.ui.UiKitButton android:id="@id/close_button" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/keyline_1" app:destructive="true" app:type="primary" />
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

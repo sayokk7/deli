@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView android:id="@id/delivery_fee" android:paddingBottom="@dimen/menu_item_padding" android:layout_width="fill_parent" android:layout_height="wrap_content" android:drawablePadding="@dimen/padding_small" android:paddingStart="@dimen/menu_item_padding" android:paddingEnd="@dimen/menu_item_padding" style="@style/UIKit.TextAppearance.Body.Small.Secondary"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

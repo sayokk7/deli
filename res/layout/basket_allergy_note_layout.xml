@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:background="?android:selectableItemBackground" android:paddingTop="@dimen/padding_medium" android:paddingBottom="@dimen/padding_medium" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="@dimen/keyline_1" android:paddingEnd="@dimen/keyline_1"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:layout_gravity="center_vertical" android:id="@id/add_allergy_notes" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/basket_add_allergy_notes" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" style="@style/UIKit.TextAppearance.Body.Medium.Action" />
+    <TextView android:id="@id/allergy_notes" android:paddingTop="@dimen/padding_xsmall" android:layout_width="fill_parent" android:layout_height="wrap_content" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/add_allergy_notes" style="@style/UIKit.TextAppearance.Body.Small.Secondary" />
+</androidx.constraintlayout.widget.ConstraintLayout>

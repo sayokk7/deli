@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/root_container" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:id="@id/title" android:padding="@dimen/keyline_1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:textAllCaps="true" style="@style/UIKit.TextAppearance.Body.XSmall.Secondary" />
+    <androidx.recyclerview.widget.RecyclerView android:id="@id/recycler_view" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+    <FrameLayout android:id="@id/done_container" android:background="?backgroundSurfaceColor" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.deliveroo.common.ui.UiKitButton android:id="@id/done" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/padding_medium" app:text="@string/action_done" />
+    </FrameLayout>
+</LinearLayout>

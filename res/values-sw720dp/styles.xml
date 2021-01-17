@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ZopimChatTheme" parent="@style/ZopimChatTheme.Light.Dialog" />
+    <style name="ZopimChatTheme.Dark.Dialog" parent="@style/_ZopimChatTheme.Dark.Dialog" />
+    <style name="ZopimChatTheme.Dark.DialogWhenLarge" parent="@style/_ZopimChatTheme.Dark.DialogWhenLarge" />
+    <style name="ZopimChatTheme.Light.Dialog" parent="@style/_ZopimChatTheme.Light.Dialog" />
+    <style name="ZopimChatTheme.Light.DialogWhenLarge" parent="@style/_ZopimChatTheme.Light.DialogWhenLarge" />
+    <style name="_ZopimChatTheme.Dark.Dialog" parent="@style/Theme.AppCompat.Dialog">
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowSoftInputMode">stateAlwaysHidden</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="_ZopimChatTheme.Dark.DialogWhenLarge" parent="@style/Theme.AppCompat.DialogWhenLarge">
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowSoftInputMode">stateAlwaysHidden</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="_ZopimChatTheme.Light.Dialog" parent="@style/Theme.AppCompat.Light.Dialog">
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowSoftInputMode">stateAlwaysHidden</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="_ZopimChatTheme.Light.DialogWhenLarge" parent="@style/Theme.AppCompat.Light.DialogWhenLarge">
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowSoftInputMode">stateAlwaysHidden</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+</resources>

@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProgressBar android:layout_width="28.0dip" android:layout_height="28.0dip" android:indeterminateTint="?colorAccent" style="?android:progressBarStyleSmall"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

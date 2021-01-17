@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge android:paddingTop="@dimen/keyline_1_half" android:paddingBottom="@dimen/keyline_1_half"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:layout_gravity="center_vertical" android:id="@id/left" android:background="@color/black_alpha_12" android:layout_width="0.0dip" android:layout_height="1.0dip" android:layout_weight="1.0" />
+    <TextView android:id="@id/separator_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingStart="@dimen/padding_medium" android:paddingEnd="@dimen/padding_medium" style="@style/UIKit.TextAppearance.Body.Small.Bold" />
+    <View android:layout_gravity="center_vertical" android:id="@id/right" android:background="@color/black_alpha_12" android:layout_width="0.0dip" android:layout_height="1.0dip" android:layout_weight="1.0" />
+</merge>

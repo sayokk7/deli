@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="@drawable/APKTOOL_DUMMY_90" android:layout_width="@dimen/recent_order_item_width" android:layout_height="@dimen/recent_order_item_height"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout android:padding="@dimen/keyline_1" android:layout_width="fill_parent" android:layout_height="fill_parent" android:foreground="?android:selectableItemBackground">
+        <TextView android:ellipsize="end" android:id="@id/title" android:layout_width="0.0dip" android:layout_height="wrap_content" android:maxLines="1" android:layout_marginEnd="@dimen/padding_small" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" style="@style/UIKit.TextAppearance.Body.Medium" />
+        <TextView android:id="@id/price" android:layout_width="wrap_content" android:layout_height="wrap_content" app:layout_constraintBottom_toTopOf="@id/cta" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/title" style="@style/UIKit.TextAppearance.Body.Medium.Secondary" />
+        <TextView android:id="@id/divider" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/menu_tag_text" app:layout_constraintBaseline_toBaselineOf="@id/price" app:layout_constraintEnd_toStartOf="@id/date" app:layout_constraintStart_toEndOf="@id/price" style="@style/UIKit.TextAppearance.Body.Medium.Secondary" />
+        <TextView android:id="@id/date" android:layout_width="wrap_content" android:layout_height="wrap_content" app:layout_constraintBaseline_toBaselineOf="@id/price" app:layout_constraintStart_toEndOf="@id/divider" style="@style/UIKit.TextAppearance.Body.Medium.Secondary" />
+        <TextView android:id="@id/cta" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/restaurant_reorder" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" style="@style/UIKit.TextAppearance.Body.Medium.Action" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
